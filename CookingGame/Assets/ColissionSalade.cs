@@ -6,15 +6,17 @@ using UnityEngine;
 
 public class ColissionSalade : MonoBehaviour
 {
+    public ParticleSystem particulecoup;
     public Collider MaindCollider;
     public int nbcoup = 3;
     public GameObject FeuilleSalade;
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("test");
+        
         if (other == MaindCollider)
         {
-            Debug.Log("enter");
+            Debug.Log("coup dans la salade");
+            particulecoup.Play();
             nbcoup--;
         }
     }
