@@ -43,24 +43,25 @@ public class AssemblageIngrédients : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(_ListIngredients.Count);
+        //Debug.Log(_ListIngredients.Count);
     }
 
 
     private void Join(GameObject child, GameObject parent)
     {
         child.layer = _assietteLayer;//L'ingrédient devient une partie de l'assiette
+        child.transform.localRotation = Quaternion.identity;
         child.transform.parent = parent.transform;
         totalLocalHauteurY += child.transform.localScale.y/2f + ancienneHauteurY;
         ancienneHauteurY = child.transform.localScale.y / 2f;
-        child.transform.localPosition = new Vector3(0f,totalLocalHauteurY,0f);
-        child.transform.localRotation = Quaternion.identity;
         child.GetComponent<Rigidbody>().isKinematic = true;
+        child.transform.localPosition = new Vector3(0f,totalLocalHauteurY,0f);
+        
 
     }
 
     private void NewAssemblerMakerPosition(float yMovement)
     {
-        transform.position += new Vector3(0,yMovement, 0);
+        transform.position += new Vector3(0,yMovement/4f, 0);
     }
 }
