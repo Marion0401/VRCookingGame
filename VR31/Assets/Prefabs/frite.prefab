@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1272693449654099456}
   - component: {fileID: 4097005283485473789}
   - component: {fileID: 2001742427752988434}
+  - component: {fileID: -6237405996673636785}
   m_Layer: 0
   m_Name: frite
   m_TagString: Untagged
@@ -112,3 +113,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-6237405996673636785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5533462416343436740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 570de6927c16b3448bdbb71b9473a8d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaterialCru: {fileID: 2100000, guid: 7f93de5c3343d854eb79a7a7f2b773e9, type: 2}
+  MaterialCuit: {fileID: 2100000, guid: 52f8bad85cfba3946bf6a9697d8aea2c, type: 2}
+  compteur: 3.84
+  temps_cuisson: 3
+  isInPoele: 0
+  poele: {fileID: 4941783113075346122, guid: 91b4fb27c067278408317956b135c5d8, type: 3}
