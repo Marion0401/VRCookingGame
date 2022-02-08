@@ -3,37 +3,52 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.UI;
+
+public enum Aliments {SALADE,TOMATE,PAIN}
 
 public class ColissionSalade : MonoBehaviour
 {
+    private GameObject alimentdebase;
+    private GameObject decoupe;
+    public Aliments aliment;
     public ParticleSystem particulecoup;
     public Collider MaindCollider;
     public int nbcoup = 3;
-    public GameObject FeuilleSalade;
-    private void OnTriggerEnter(Collider other)
-    {
-        
-        if (other == MaindCollider)
-        {
-            Debug.Log("coup dans la salade");
-            particulecoup.Play();
-            nbcoup--;
-        }
-    }
+    
 
-    private void Update()
+    private void Start()
     {
-        if (nbcoup == 0)
+        switch (aliment)
         {
-            Debug.Log("Salade");
-
-            for (int i = -1; i <= 2; i++)
+            case(Aliments.TOMATE):
             {
-                Instantiate(FeuilleSalade, transform.position+new Vector3(0,1.5f*i,0), 
-                    transform.rotation*Quaternion.Euler(new Vector3(0,3*i,0)));
+                alimentdebase = Instantiate(Resources.Load("Tomato", typeof(GameObject))) as GameObject;
+                //alimentdebase= Resources.Load<GameObject>("=Tomato");
+                decoupe = Resources.Load<GameObject>("Tranche_Tomate");
+                Rigidbody rb = alimentdebase.AddComponent<Rigidbody>() as Rigidbody;
+                var aaa = alimentdebase.AddComponent<ColissionSalade>();
+                aaa.MaindCollider = MaindCollider;
+                rb.useGravity = false;
+                break;
             }
-
-            Destroy(gameObject);
+            case(Aliments.SALADE):
+            {
+                alimentdebase = Instantiate(Resources.Load("Sla", typeof(GameObject))) as GameObject;
+                //alimentdebase= Resources.Load<GameObject>("=Sla");
+                decoupe=Resources.Load<GameObject>("FeuilleSalade");
+                
+                break;
+            }
+            case(Aliments.PAIN):
+            {
+                
+                break;
+            }
         }
+        //Instantiate(alimentdebase);
+
+        
     }
+
 }
