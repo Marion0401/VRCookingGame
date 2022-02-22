@@ -13,7 +13,7 @@ namespace DefaultNamespace
         public float nbalimentdecoupe;
         public GameObject decoupe;
         public Collider MaindCollider;
-        public int nbcoup = 3;
+        private int nbcoup=3;
         private void OnTriggerEnter(Collider other)
         {
         

@@ -17,6 +17,7 @@ namespace DefaultNamespace
 
     public class collisions : MonoBehaviour
     {
+        public int cutalimnb;
         private GameObject alimentdebase;
         private GameObject decoupe;
         public Aliments aliment;
@@ -38,7 +39,7 @@ namespace DefaultNamespace
                     var aaa = alimentdebase.GetComponent<Collision>();
                     aaa.MaindCollider = MaindCollider;
                     aaa.decoupe = decoupe;
-                    aaa.nbalimentdecoupe = 4;
+                    aaa.nbalimentdecoupe = cutalimnb;
                     rb.useGravity = false;
                     break;
                 }
@@ -51,7 +52,7 @@ namespace DefaultNamespace
                     var aaa = alimentdebase.GetComponent<Collision>();
                     aaa.MaindCollider = MaindCollider;
                     aaa.decoupe = decoupe;
-                    aaa.nbalimentdecoupe = 4;
+                    aaa.nbalimentdecoupe = cutalimnb;
                     rb.useGravity = false;
                     break;
                 }
@@ -65,7 +66,7 @@ namespace DefaultNamespace
                     var aaa = alimentdebase.GetComponent<Collision>();
                     aaa.MaindCollider = MaindCollider;
                     aaa.decoupe = decoupe;
-                    aaa.nbalimentdecoupe = 2;
+                    aaa.nbalimentdecoupe = cutalimnb;
                     rb.useGravity = false;
                     break;
                 }
