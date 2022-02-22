@@ -6,8 +6,8 @@ public class FriteCuisson : MonoBehaviour
 {
     public Material MaterialCru;
     public Material MaterialCuit;
-    public float compteur;
-    public float temps_cuisson = 3;
+    public float compteur =0f;
+    public float temps_cuisson = 5;
 
     public bool isInPoele = false;
     public GameObject poele;
@@ -39,7 +39,7 @@ public class FriteCuisson : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other == poele.GetComponent<Collider>())
+        if (other.name == "RECT_Pot")
         {
             Debug.Log("enter");
             isInPoele = true;
@@ -48,7 +48,7 @@ public class FriteCuisson : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other == poele.GetComponent<Collider>())
+        if (other.name == "RECT_Pot")
         {
             Debug.Log("exit");
             isInPoele = false;

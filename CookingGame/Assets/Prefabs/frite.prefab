@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaterialCru: {fileID: 2100000, guid: 7f93de5c3343d854eb79a7a7f2b773e9, type: 2}
   MaterialCuit: {fileID: 2100000, guid: 52f8bad85cfba3946bf6a9697d8aea2c, type: 2}
-  compteur: 3.84
+  compteur: 0
   temps_cuisson: 3
   isInPoele: 0
   poele: {fileID: 4941783113075346122, guid: 91b4fb27c067278408317956b135c5d8, type: 3}
