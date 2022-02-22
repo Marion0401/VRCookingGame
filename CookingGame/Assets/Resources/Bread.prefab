@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 853874027398267597}
   - component: {fileID: 8215280682529419646}
   - component: {fileID: 3236834513890250876}
+  - component: {fileID: -1920469151961306475}
   - component: {fileID: 6062069903741350943}
   m_Layer: 0
   m_Name: Bread
@@ -82,6 +83,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-1920469151961306475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229020839480814445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72bd4f0a57a74b6a814e248b3614a440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decoupe: {fileID: 0}
+  MaindCollider: {fileID: 0}
+  nbcoup: 3
 --- !u!135 &6062069903741350943
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -90,7 +106,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1229020839480814445}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
