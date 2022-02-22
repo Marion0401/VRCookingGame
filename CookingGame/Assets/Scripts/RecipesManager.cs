@@ -39,6 +39,7 @@ public class RecipesManager : MonoBehaviour
 
         }
         positionIngredientBurger.transform.SetParent(positionFood.transform, false);
+
         // Plus
         Instantiate(plusPrefab, new Vector3(0, 0, 0), Quaternion.identity).transform.SetParent(positionFood.transform, false);
 
