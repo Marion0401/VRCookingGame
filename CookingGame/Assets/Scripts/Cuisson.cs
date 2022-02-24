@@ -33,7 +33,8 @@ public class Cuisson : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other==poele.GetComponent<Collider>())
+        Debug.Log(other.name);
+        if (other.name == "RECT_Pot")
         {
             Debug.Log("enter");
             isInPoele = true;
@@ -42,7 +43,9 @@ public class Cuisson : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other == poele.GetComponent<Collider>())
+
+        Debug.Log(other.name);
+        if (other.name == "RECT_Pot")
         {
             Debug.Log("exit");
             isInPoele = false;

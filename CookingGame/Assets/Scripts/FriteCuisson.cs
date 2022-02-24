@@ -39,19 +39,21 @@ public class FriteCuisson : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "RECT_Pot")
+        if (other.GetComponent<Contenace>())
         {
             Debug.Log("enter");
             isInPoele = true;
+            this.transform.parent = poele.transform;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.name == "RECT_Pot")
+        if (other.GetComponent<Contenace>() )
         {
             Debug.Log("exit");
             isInPoele = false;
+            transform.parent = null;
         }
     }
 
