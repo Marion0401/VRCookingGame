@@ -10,8 +10,11 @@ public class RecipesManager : MonoBehaviour
     public List<Recipes> listHamburger = new List<Recipes>();
     public List<GameObject> listDrink = new List<GameObject>();
     public GameObject friesPrefab;
-    //public float xPositionTopBread;
-    //public float yPositionTopBread;
+    private bool isOccupied;
+    private GameObject fries, drink, plus1, plus2, burger;
+    private List<GameObject> entireBurger = new List<GameObject>();
+    
+    
     
 
 
@@ -21,41 +24,73 @@ public class RecipesManager : MonoBehaviour
     {
         
       
-        // pour les frites
-        GameObject fries = Instantiate(friesPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-        fries.transform.SetParent(positionFood.transform, false);
-
-        // Plus
-        Instantiate(plusPrefab, new Vector3(0, 0, 0), Quaternion.identity).transform.SetParent(positionFood.transform, false);
-
-        // pour le burger
-        int rand = Random.Range(0, listHamburger.Count);
-        Recipes actualRecipe = listHamburger[rand];
-        foreach (GameObject ingredient in actualRecipe.ingredientRecipes)
-        {
-            GameObject burger = Instantiate(ingredient, new Vector3(0, 0, 0), Quaternion.identity);
-
-            burger.transform.SetParent(positionIngredientBurger.transform, false);
-
-        }
-        positionIngredientBurger.transform.SetParent(positionFood.transform, false);
-
-        // Plus
-        Instantiate(plusPrefab, new Vector3(0, 0, 0), Quaternion.identity).transform.SetParent(positionFood.transform, false);
-
-        // pour la boisson
-        int rand2 = Random.Range(0, listDrink.Count);
-        GameObject drink = Instantiate(listDrink[rand2], new Vector3(0, 0, 0), Quaternion.identity);
-        drink.transform.SetParent(positionFood.transform, false);
+        
 
         
 
 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        
+        isOccupied = true;
+        
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        Destroy(drink);
+        
+        Destroy(plus1);
+        Destroy(fries);
+        Destroy(plus2);
+        positionFood.transform.DetachChildren();
+        foreach(GameObject ingredient in entireBurger)
+        {
+            Destroy(ingredient);
+        }
+
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+        if (isOccupied)
+        {
+            // pour les frites
+            fries = Instantiate(friesPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            fries.transform.SetParent(positionFood.transform, false);
+
+            // Plus
+            plus1 = Instantiate(plusPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            plus1.transform.SetParent(positionFood.transform, false);
+
+            // pour le burger
+            int rand = Random.Range(0, listHamburger.Count);
+            Recipes actualRecipe = listHamburger[rand];
+            foreach (GameObject ingredient in actualRecipe.ingredientRecipes)
+            {
+                burger = Instantiate(ingredient, new Vector3(0, 0, 0), Quaternion.identity);
+                entireBurger.Add(burger);
+                burger.transform.SetParent(positionIngredientBurger.transform, false);
+                
+
+            }
+            positionIngredientBurger.transform.Rotate(0, 0, 0);
+
+            positionIngredientBurger.transform.SetParent(positionFood.transform, false);
+
+            // Plus
+            plus2 = Instantiate(plusPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            plus2.transform.SetParent(positionFood.transform, false);
+
+            // pour la boisson
+            int rand2 = Random.Range(0, listDrink.Count);
+            drink = Instantiate(listDrink[rand2], new Vector3(0, 0, 0), Quaternion.identity);
+            drink.transform.SetParent(positionFood.transform, false);
+
+            isOccupied = false;
+        }
     }
 }

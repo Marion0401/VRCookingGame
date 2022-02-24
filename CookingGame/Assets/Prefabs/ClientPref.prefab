@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7859564314018774972}
   - component: {fileID: 8989058916824703642}
   - component: {fileID: 8277895282512962661}
+  - component: {fileID: 279893488357938998}
   m_Layer: 0
   m_Name: ClientPref
   m_TagString: Untagged
@@ -118,6 +119,7 @@ MonoBehaviour:
   atPlace: 0
   selectedPlace: 0
   spot: 0
+  speed: 1
   directionToLookAt: {x: 1, y: 0, z: 0}
 --- !u!54 &8989058916824703642
 Rigidbody:
@@ -148,3 +150,16 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &279893488357938998
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738117304832380971}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.21804622, z: 1}
+  m_Center: {x: 0, y: -0.6090231, z: 0}

@@ -17,6 +17,8 @@ public class ClientQueuer : MonoBehaviour
 
     public int spot = 0;
 
+    public float speed=1;
+
     [SerializeField] Vector3 directionToLookAt;
 
     // Start is called before the first frame update

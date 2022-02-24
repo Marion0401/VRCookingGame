@@ -29,7 +29,7 @@ public class QueueManager : MonoBehaviour
 
     public void ClientExit(int index)
     {
-        if (index <= queue.Count )
+        if (index <= queue.Count && CounterOccupied[index-1]!=0)
         {
             ClientQueuer exiting = ClientAtSpot[index-1].GetComponent<ClientQueuer>();
             queue.RemoveAt(index - 1);
