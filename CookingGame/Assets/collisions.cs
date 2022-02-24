@@ -40,6 +40,7 @@ namespace DefaultNamespace
                     aaa.MaindCollider = MaindCollider;
                     aaa.decoupe = decoupe;
                     aaa.nbalimentdecoupe = cutalimnb;
+                    aaa.nbcoup = nbcoup;
                     rb.useGravity = false;
                     break;
                 }

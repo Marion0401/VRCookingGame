@@ -345,7 +345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c854e0314c01994d99b1e483efd7ac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cutalimnb: 2
+  cutalimnb: 5
   aliment: 1
   particulecoup: {fileID: 0}
   MaindCollider: {fileID: 1078708572}

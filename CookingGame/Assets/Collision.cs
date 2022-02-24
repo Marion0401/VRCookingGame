@@ -9,18 +9,19 @@ namespace DefaultNamespace
 {
     public class Collision :MonoBehaviour
     {
-
+        [SerializeField] private AudioSource sondecoupe;
+        
         public float nbalimentdecoupe;
         public GameObject decoupe;
         public Collider MaindCollider;
-        private int nbcoup=3;
+        public int nbcoup=3;
         private void OnTriggerEnter(Collider other)
         {
         
             if (other == MaindCollider)
             {
                 Debug.Log("coup dans la salade");
-            
+                sondecoupe.Play();
                 nbcoup--;
             }
         }
@@ -33,10 +34,11 @@ namespace DefaultNamespace
             
                 for (int i = -1; i <=nbalimentdecoupe-2; i++)
                 {
+                    
                     Instantiate(decoupe, transform.position+new Vector3(0,1.5f*i,0), 
                         transform.rotation*Quaternion.Euler(new Vector3(0,3*i,0)));
                 }
-            
+                
                 Destroy(this.gameObject);
             }
         }
