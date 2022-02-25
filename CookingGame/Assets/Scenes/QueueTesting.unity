@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 48793551}
   - component: {fileID: 48793550}
   - component: {fileID: 48793554}
+  - component: {fileID: 48793555}
   m_Layer: 0
   m_Name: Queue Manager
   m_TagString: Untagged
@@ -247,9 +248,33 @@ MonoBehaviour:
   QueueCapacity: 10
   queue: []
   autoSpawn: 1
-  autoLeave: 1
+  autoLeave: 0
   spawnDelay: 1
   clientDoneChance: 0.0015
+  Displays:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &48793555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48793549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e79529255194a4390d57c3ffba0dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BottomBread: {fileID: 3051451182841540315, guid: b875c479464bf7d4b83cf75a9afe1416, type: 3}
+  Salad: {fileID: 3668283481071904237, guid: 7937d5d76dc86e14aa36585f95b9861f, type: 3}
+  Tomato: {fileID: 8189560486790990566, guid: 097e3b3b0dc44ac439101708bf3063b9, type: 3}
+  Steak: {fileID: 5640972115455337458, guid: 2a88c82d35a848f45bcab3f8a62839b6, type: 3}
+  TopBread: {fileID: 4752340901177154852, guid: 29b7c9075f8250046bdb6a6c275221fb, type: 3}
+  HotDogBread: {fileID: 3051451182841540315, guid: b875c479464bf7d4b83cf75a9afe1416, type: 3}
+  Sausage: {fileID: 5640972115455337458, guid: 2a88c82d35a848f45bcab3f8a62839b6, type: 3}
+  Fries: {fileID: 9063661736115888421, guid: edda9ab55ae5e464582586fa0a0f06e9, type: 3}
 --- !u!1 &168152346
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,7 +600,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &430190851
 Transform:
   m_ObjectHideFlags: 0
@@ -695,12 +720,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 479499040}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecff0210348a40e40a603007458331d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positionIngredientBurger: {fileID: 1318201661}
+  positionIngredientBurger: {fileID: 539107543}
   positionFood: {fileID: 789320385}
   plusPrefab: {fileID: 6234570395521287303, guid: 356446584f1bfbe4484fa6426b73079a, type: 3}
   listHamburger:
@@ -817,6 +842,7 @@ GameObject:
   - component: {fileID: 510023860}
   - component: {fileID: 510023859}
   - component: {fileID: 510023858}
+  - component: {fileID: 510023861}
   m_Layer: 5
   m_Name: Screen 1
   m_TagString: Untagged
@@ -839,7 +865,7 @@ RectTransform:
   - {fileID: 1704125231}
   - {fileID: 1277715424}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0.006, y: -89.825, z: 0.16}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -907,6 +933,26 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &510023861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510023856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583511ef06759cd478522c1bb1a7bf62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayNumber: 2
+  recipeDisplayed: 0
+  positionFood: {fileID: 1277715424}
+  plusPrefab: {fileID: 6234570395521287303, guid: 356446584f1bfbe4484fa6426b73079a, type: 3}
+  VerticalLayoutPrefab: {fileID: 6624032297783650793, guid: eb941263022c8434681cf912d0478238, type: 3}
+  listDrink:
+  - {fileID: 359791425555938311, guid: 4bf643742a89a3f43a8bb01b6ab27ec4, type: 3}
+  entireOrderObjects: []
 --- !u!1 &515307504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,7 +1102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &539107544
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1073,7 +1119,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 24.738651, y: -10.105}
+  m_AnchoredPosition: {x: 24.739, y: -9.965}
   m_SizeDelta: {x: 0.5875, y: 0.587}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &539107545
@@ -1363,7 +1409,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &720358504
 GameObject:
@@ -1404,7 +1450,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 720358504}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecff0210348a40e40a603007458331d5, type: 3}
   m_Name: 
@@ -1553,6 +1599,7 @@ GameObject:
   - component: {fileID: 837123570}
   - component: {fileID: 837123569}
   - component: {fileID: 837123568}
+  - component: {fileID: 837123572}
   m_Layer: 5
   m_Name: Screen 2
   m_TagString: Untagged
@@ -1643,6 +1690,26 @@ RectTransform:
   m_AnchoredPosition: {x: 4.3, y: 0}
   m_SizeDelta: {x: 45.4485, y: 26.0413}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &837123572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837123567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583511ef06759cd478522c1bb1a7bf62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayNumber: 1
+  recipeDisplayed: 0
+  positionFood: {fileID: 0}
+  plusPrefab: {fileID: 6234570395521287303, guid: 356446584f1bfbe4484fa6426b73079a, type: 3}
+  VerticalLayoutPrefab: {fileID: 6624032297783650793, guid: eb941263022c8434681cf912d0478238, type: 3}
+  listDrink:
+  - {fileID: 359791425555938311, guid: 4bf643742a89a3f43a8bb01b6ab27ec4, type: 3}
+  entireOrderObjects: []
 --- !u!1 &876903935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1813,7 +1880,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926826304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.84, y: 1, z: 3.52}
+  m_LocalPosition: {x: -1.84, y: 1, z: 9.9}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2105,7 +2172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1318201662
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2122,7 +2189,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 24.738651, y: -10.105}
+  m_AnchoredPosition: {x: 24.739, y: -9.965}
   m_SizeDelta: {x: 0.5875, y: 0.587}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1318201663
@@ -2318,6 +2385,7 @@ GameObject:
   - component: {fileID: 1466349215}
   - component: {fileID: 1466349214}
   - component: {fileID: 1466349213}
+  - component: {fileID: 1466349216}
   m_Layer: 0
   m_Name: Pos Marker
   m_TagString: Untagged
@@ -2401,6 +2469,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466349211}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1466349216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466349211}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecff0210348a40e40a603007458331d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionIngredientBurger: {fileID: 1704125230}
+  positionFood: {fileID: 1277715422}
+  plusPrefab: {fileID: 6234570395521287303, guid: 356446584f1bfbe4484fa6426b73079a, type: 3}
+  listHamburger:
+  - {fileID: 833195280}
+  - {fileID: 1096526933}
+  listDrink:
+  - {fileID: 359791425555938311, guid: 4bf643742a89a3f43a8bb01b6ab27ec4, type: 3}
+  friesPrefab: {fileID: 9063661736115888421, guid: edda9ab55ae5e464582586fa0a0f06e9, type: 3}
 --- !u!1 &1470666872
 GameObject:
   m_ObjectHideFlags: 0
@@ -2413,6 +2502,7 @@ GameObject:
   - component: {fileID: 1470666875}
   - component: {fileID: 1470666874}
   - component: {fileID: 1470666873}
+  - component: {fileID: 1470666877}
   m_Layer: 5
   m_Name: Screen 3
   m_TagString: Untagged
@@ -2503,6 +2593,26 @@ RectTransform:
   m_AnchoredPosition: {x: 4.3, y: 0}
   m_SizeDelta: {x: 45.4485, y: 26.0413}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1470666877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470666872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583511ef06759cd478522c1bb1a7bf62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayNumber: 0
+  recipeDisplayed: 0
+  positionFood: {fileID: 0}
+  plusPrefab: {fileID: 6234570395521287303, guid: 356446584f1bfbe4484fa6426b73079a, type: 3}
+  VerticalLayoutPrefab: {fileID: 6624032297783650793, guid: eb941263022c8434681cf912d0478238, type: 3}
+  listDrink:
+  - {fileID: 359791425555938311, guid: 4bf643742a89a3f43a8bb01b6ab27ec4, type: 3}
+  entireOrderObjects: []
 --- !u!1 &1532042935
 GameObject:
   m_ObjectHideFlags: 0
@@ -2606,7 +2716,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532042935}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ecff0210348a40e40a603007458331d5, type: 3}
   m_Name: 
@@ -2969,7 +3079,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1704125231
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2978,7 +3088,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704125230}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 510023857}
@@ -2986,7 +3096,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 24.738651, y: -10.105}
+  m_AnchoredPosition: {x: 24.739, y: -9.965}
   m_SizeDelta: {x: 0.5875, y: 0.587}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1704125232

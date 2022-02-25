@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8277895282512962661}
   - component: {fileID: 279893488357938998}
   m_Layer: 0
-  m_Name: ClientPref
+  m_Name: Client Prefab Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,7 +119,7 @@ MonoBehaviour:
   atPlace: 0
   selectedPlace: 0
   spot: 0
-  speed: 1
+  speed: 2
   directionToLookAt: {x: 1, y: 0, z: 0}
 --- !u!54 &8989058916824703642
 Rigidbody:

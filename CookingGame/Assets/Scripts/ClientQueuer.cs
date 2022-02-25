@@ -56,7 +56,7 @@ public class ClientQueuer : MonoBehaviour
 
     float DistanceToNext()
     {
-        if (orderInQueue >1)
+        if (orderInQueue >3)
         {
             float dist = (float)((Mathf.Pow(transform.position.x - manager.queue[orderInQueue - 2].transform.position.x, 2) + Mathf.Pow(transform.position.z - manager.queue[orderInQueue - 2].transform.position.z, 2)) / 1.41421);
             return dist;
@@ -87,7 +87,7 @@ public class ClientQueuer : MonoBehaviour
             else
             {
                 transform.LookAt(new Vector3(destination.x, 1, destination.z));
-                transform.position -= (distToDest.normalized / 100);
+                transform.position -= speed*(distToDest.normalized * Time.deltaTime);
             }
         }
         else if (orderInQueue<=3 && passedCheckpoints >= manager.Checkpoints.Count - 3)
@@ -113,10 +113,12 @@ public class ClientQueuer : MonoBehaviour
                 Vector3 distToDest = (transform.position - destination);
 
                 transform.LookAt(new Vector3(destination.x, 1, destination.z));
-                transform.position -= (distToDest.normalized / 100);
+                transform.position -= speed * (distToDest.normalized *Time.deltaTime);
 
                 if (distToDest.magnitude < 0.5 && !atPlace)
                 {
+                    manager.Displays[spot].StartDIsplay();
+
                     atPlace = true;
                     transform.LookAt(transform.position + directionToLookAt);
                 }

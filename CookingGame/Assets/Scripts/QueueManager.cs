@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class QueueManager : MonoBehaviour
 {
+    public static QueueManager instance;
     [SerializeField] public List<Transform> Checkpoints;
     [SerializeField] GameObject ClientPrefab;
 
@@ -21,10 +22,18 @@ public class QueueManager : MonoBehaviour
     [SerializeField] [Range(0, 1)] float clientDoneChance = 0.001f;
 
     bool rowHasBeenFilled = false;
-    // Start is called before the first frame update
-    void Start()
-    {
 
+    public RecipeDisplay[] Displays = new RecipeDisplay[3];
+
+    // Start is called before the first frame update
+    void Awake()
+    {
+        instance = this;
+
+        foreach (RecipeDisplay rd in FindObjectsOfType<RecipeDisplay>())
+        {
+            Displays[rd.displayNumber] = rd;
+        }
     }
 
     public void ClientExit(int index)
@@ -32,14 +41,21 @@ public class QueueManager : MonoBehaviour
         if (index <= queue.Count && CounterOccupied[index-1]!=0)
         {
             ClientQueuer exiting = ClientAtSpot[index-1].GetComponent<ClientQueuer>();
-            queue.RemoveAt(index - 1);
-            foreach (ClientQueuer cq in queue) { if (cq.orderInQueue > index) cq.orderInQueue--; }
+            if (exiting.atPlace)
+            {
+                queue.RemoveAt(index - 1);
+                int j = 1;
+                foreach (ClientQueuer cq in queue) { cq.orderInQueue = j; j++; }
 
 
-            CounterOccupied[exiting.spot] = 0;
-            ClientAtSpot[exiting.spot] = null;
+                CounterOccupied[exiting.spot] = 0;
+                ClientAtSpot[exiting.spot] = null;
 
-            Destroy(exiting.gameObject);
+                Displays[exiting.spot].ExitDisplay();
+
+
+                Destroy(exiting.gameObject);
+            }
         }
     }
 

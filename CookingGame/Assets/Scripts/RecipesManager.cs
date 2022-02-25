@@ -40,6 +40,7 @@ public class RecipesManager : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        print("client exit");
         Destroy(drink);
         
         Destroy(plus1);
