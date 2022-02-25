@@ -16,6 +16,7 @@ public class RecipeDisplay : MonoBehaviour
     Vector3 initialPositionFood;
     [SerializeField] GameObject plusPrefab;
     [SerializeField] GameObject VerticalLayoutPrefab;
+    [SerializeField] Image ScreenColor;
     
     [SerializeField] List<GameObject> listDrink = new List<GameObject>();
     
@@ -29,17 +30,23 @@ public class RecipeDisplay : MonoBehaviour
     void Awake()
     {
         positionFood = GetComponentInChildren<HorizontalLayoutGroup>().transform;
-
+        ScreenColor = GetComponentInChildren<Image>();
     }
+
+    private void Start()
+    {
+        ScreenColor.color = new Color(80/255, 80/255, 80/255);
+    }
+
 
     public Order GenerateOrder()
     {
         print(displayNumber);
         Order newOrder = new Order();
 
-        if (Random.Range(0,1) == 0) { newOrder.hasDrink = true; newOrder.drink = Ingredient.Drink; newOrder.numberOfItem++; }
+        if (Random.Range(0,2) == 0) { newOrder.hasDrink = true; newOrder.drink = Ingredient.Drink; newOrder.numberOfItem++; }
      
-        if (Random.Range(0,1) == 0) { newOrder.hasFries = true; newOrder.fries = Ingredient.Fries; newOrder.numberOfItem++; }
+        if (Random.Range(0,2) == 0) { newOrder.hasFries = true; newOrder.fries = Ingredient.Fries; newOrder.numberOfItem++; }
 
 
         // Cas où de multiples plats sont proposés
@@ -58,6 +65,7 @@ public class RecipeDisplay : MonoBehaviour
 
     public void StartDIsplay()
     {
+        ScreenColor.color = new Color(1, 1, 1);
         recipeDisplayed = true;
         CurrentOrder = GenerateOrder();
 
@@ -112,7 +120,7 @@ public class RecipeDisplay : MonoBehaviour
                     break;
 
             }
-            GameObject burger = Instantiate(ingredient, new Vector3(0, 0, 0), Quaternion.identity);
+            GameObject burger = Instantiate(ingredient, new Vector3(0, 1f, 0), Quaternion.identity);
             burger.transform.SetParent(burgerLayout.transform, false);
             entireOrderObjects.Add(burger);
             
@@ -143,6 +151,8 @@ public class RecipeDisplay : MonoBehaviour
 
     public void ExitDisplay()
     {
+        ScreenColor.color = new Color(80 / 255, 80 / 255, 80 / 255);
+
         recipeDisplayed = false;
         foreach (GameObject item in entireOrderObjects) Destroy(item);
         entireOrderObjects = new List<GameObject>();

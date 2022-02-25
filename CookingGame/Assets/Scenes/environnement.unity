@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5994,7 +5994,7 @@ BoxCollider:
   m_GameObject: {fileID: 408904528}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.8923578, y: 2.7516084, z: 1.883787}
   m_Center: {x: -0.030971527, y: 0.375804, z: 0.11336404}
@@ -6613,14 +6613,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3137255, g: 0.3137255, b: 0.3137255, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a872150665c1cec4fa75503364ac0715, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7b35b7b9e2961f245807ae05262d74a9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6785,14 +6785,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3137255, g: 0.3137255, b: 0.3137255, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a872150665c1cec4fa75503364ac0715, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7b35b7b9e2961f245807ae05262d74a9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7300,14 +7300,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3137255, g: 0.3137255, b: 0.3137255, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a872150665c1cec4fa75503364ac0715, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7b35b7b9e2961f245807ae05262d74a9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7498,7 +7498,6 @@ GameObject:
   m_Component:
   - component: {fileID: 882916884}
   - component: {fileID: 882916886}
-  - component: {fileID: 882916885}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -7520,27 +7519,6 @@ Transform:
   m_Father: {fileID: 1895579981}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &882916885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 882916883}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecff0210348a40e40a603007458331d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  positionIngredientBurger: {fileID: 1066102186}
-  positionFood: {fileID: 1197572962}
-  plusPrefab: {fileID: 6234570395521287303, guid: 356446584f1bfbe4484fa6426b73079a, type: 3}
-  listHamburger:
-  - {fileID: 0}
-  - {fileID: 0}
-  listDrink:
-  - {fileID: 359791425555938311, guid: 4bf643742a89a3f43a8bb01b6ab27ec4, type: 3}
-  friesPrefab: {fileID: 9063661736115888421, guid: edda9ab55ae5e464582586fa0a0f06e9, type: 3}
 --- !u!65 &882916886
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7550,7 +7528,7 @@ BoxCollider:
   m_GameObject: {fileID: 882916883}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -8052,7 +8030,7 @@ BoxCollider:
   m_GameObject: {fileID: 1085228497}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.7750432, y: 2, z: 1.9791827}
   m_Center: {x: -0.056385636, y: 0, z: -0.07321143}
@@ -8812,6 +8790,7 @@ MonoBehaviour:
   positionFood: {fileID: 0}
   plusPrefab: {fileID: 6234570395521287303, guid: 356446584f1bfbe4484fa6426b73079a, type: 3}
   VerticalLayoutPrefab: {fileID: 6624032297783650793, guid: eb941263022c8434681cf912d0478238, type: 3}
+  ScreenColor: {fileID: 529531336}
   listDrink:
   - {fileID: 359791425555938311, guid: 4bf643742a89a3f43a8bb01b6ab27ec4, type: 3}
   entireOrderObjects: []
@@ -9438,6 +9417,7 @@ MonoBehaviour:
   positionFood: {fileID: 1197572963}
   plusPrefab: {fileID: 6234570395521287303, guid: 356446584f1bfbe4484fa6426b73079a, type: 3}
   VerticalLayoutPrefab: {fileID: 6624032297783650793, guid: eb941263022c8434681cf912d0478238, type: 3}
+  ScreenColor: {fileID: 767540255}
   listDrink:
   - {fileID: 359791425555938311, guid: 4bf643742a89a3f43a8bb01b6ab27ec4, type: 3}
   entireOrderObjects: []
@@ -10164,7 +10144,7 @@ BoxCollider:
   m_GameObject: {fileID: 1744881837}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.7762773, y: 2, z: 1.8651776}
   m_Center: {x: -0.02712071, y: 0, z: 0.060811043}
@@ -10813,6 +10793,7 @@ MonoBehaviour:
   positionFood: {fileID: 0}
   plusPrefab: {fileID: 6234570395521287303, guid: 356446584f1bfbe4484fa6426b73079a, type: 3}
   VerticalLayoutPrefab: {fileID: 6624032297783650793, guid: eb941263022c8434681cf912d0478238, type: 3}
+  ScreenColor: {fileID: 633789241}
   listDrink:
   - {fileID: 359791425555938311, guid: 4bf643742a89a3f43a8bb01b6ab27ec4, type: 3}
   entireOrderObjects: []
