@@ -8,7 +8,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
+<<<<<<< HEAD
   - camera
+=======
+  - post processing
+>>>>>>> origin/Come+Marion+Louis
   - Water
   - UI
   - aliment_decoupe
