@@ -6,11 +6,20 @@ using System;
 public class Hand : MonoBehaviour
 {
     Animator animator;
-    private float gripTarget;
-    private float triggerTarget;
+    private float gripTargetRight;
+    private float triggerTargetRight;
 
-    private float gripCurrent;
-    private float triggerCurrent;
+    private float gripCurrentRight;
+    private float triggerCurrentRight;
+
+
+    private float gripTargetLeft;
+    private float triggerTargetLeft;
+
+    private float gripCurrentLeft;
+    private float triggerCurrentLeft;
+
+
     public float speed;
 
     void Start()
@@ -23,29 +32,53 @@ public class Hand : MonoBehaviour
         AnimateHand();
     }
 
-    internal void SetTrigger(float v)
+    internal void SetTriggerLeft(float v)
     {
-        gripTarget = v;
+        gripTargetLeft = v;
     }
 
-    internal void SetGrip(float v)
+    internal void SetGripLeft(float v)
     {
-        triggerTarget = v;
+        triggerTargetLeft = v;
     }
+
+    internal void SetTriggerRight(float v)
+    {
+        gripTargetRight = v;
+    }
+
+    internal void SetGripRight(float v)
+    {
+        triggerTargetRight = v;
+    }
+
 
     void AnimateHand()
     {
-        if (gripCurrent != gripTarget)
+        if (gripCurrentLeft != gripTargetLeft)
         {
-            gripCurrent = Mathf.MoveTowards(gripCurrent, gripTarget, Time.deltaTime * speed);
-            animator.SetFloat("Grip", gripCurrent);
+            gripCurrentLeft = Mathf.MoveTowards(gripCurrentLeft, gripTargetLeft, Time.deltaTime * speed);
+            animator.SetFloat("GripLeft", gripCurrentLeft);
 
         }
 
-        if (triggerCurrent != triggerTarget)
+        if (triggerCurrentLeft != triggerTargetLeft)
         {
-            triggerCurrent = Mathf.MoveTowards(triggerCurrent, triggerTarget, Time.deltaTime * speed);
-            animator.SetFloat("Trigger", triggerCurrent);
+            triggerCurrentLeft = Mathf.MoveTowards(triggerCurrentLeft, triggerTargetLeft, Time.deltaTime * speed);
+            animator.SetFloat("TriggerLeft", triggerCurrentLeft);
+        }
+
+        if (gripCurrentRight != gripTargetRight)
+        {
+            gripCurrentRight = Mathf.MoveTowards(gripCurrentRight, gripTargetRight, Time.deltaTime * speed);
+            animator.SetFloat("GripRight", gripCurrentRight);
+
+        }
+
+        if (triggerCurrentRight != triggerTargetRight)
+        {
+            triggerCurrentRight = Mathf.MoveTowards(triggerCurrentRight, triggerTargetRight, Time.deltaTime * speed);
+            animator.SetFloat("TriggerRight", triggerCurrentRight);
         }
     }
 }

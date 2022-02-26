@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
 [RequireComponent(typeof(ActionBasedController))]
-public class HandController : MonoBehaviour
+public class HandControllerRight : MonoBehaviour
 {
     ActionBasedController controller;
     public Hand hand;
@@ -16,9 +16,8 @@ public class HandController : MonoBehaviour
 
     void Update()
     {
-        hand.SetGrip(controller.selectAction.action.ReadValue<float>());
-        hand.SetTrigger(controller.selectAction.action.ReadValue<float>());
-
+        hand.SetGripRight(controller.selectAction.action.ReadValue<float>());
+        hand.SetTriggerRight(controller.activateAction.action.ReadValue<float>());
     }
 
    
