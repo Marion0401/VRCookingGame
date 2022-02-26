@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cola Can (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1705129010167144, guid: bfa7e8189ab181843b9ac106678a628a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4528477828364640, guid: bfa7e8189ab181843b9ac106678a628a, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -6651,7 +6655,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 162905383}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Nourriture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7328,7 +7332,7 @@ MonoBehaviour:
   _plateau: {fileID: 2091832780}
   _IngredientHolder: {fileID: 162905382}
   _friePos: {x: 0, y: 0, z: 0}
-  _sodaPos: {x: 0, y: 0, z: 0}
+  _sodaPos: {x: 0, y: -0.4, z: 0}
 --- !u!65 &366887427
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7391,6 +7395,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 366887424}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &378390089 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1705129010167144, guid: bfa7e8189ab181843b9ac106678a628a, type: 3}
+  m_PrefabInstance: {fileID: 781324685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &378390094
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378390089}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &408904528
 GameObject:
   m_ObjectHideFlags: 0
@@ -7775,7 +7800,7 @@ MonoBehaviour:
   _plateau: {fileID: 701935453}
   _IngredientHolder: {fileID: 162905382}
   _friePos: {x: 0, y: 0, z: 0}
-  _sodaPos: {x: 0, y: 0, z: 0}
+  _sodaPos: {x: 0, y: -0.4, z: 0}
 --- !u!65 &450001876
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9311,21 +9336,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cola Can (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1705129010167144, guid: bfa7e8189ab181843b9ac106678a628a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4528477828364640, guid: bfa7e8189ab181843b9ac106678a628a, type: 3}
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4528477828364640, guid: bfa7e8189ab181843b9ac106678a628a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.51
+      value: -7.273
       objectReference: {fileID: 0}
     - target: {fileID: 4528477828364640, guid: bfa7e8189ab181843b9ac106678a628a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.09534454
+      value: 0.943
       objectReference: {fileID: 0}
     - target: {fileID: 4528477828364640, guid: bfa7e8189ab181843b9ac106678a628a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.711
+      value: -3.459
       objectReference: {fileID: 0}
     - target: {fileID: 4528477828364640, guid: bfa7e8189ab181843b9ac106678a628a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9944,6 +9973,10 @@ PrefabInstance:
     - target: {fileID: 1705129010167144, guid: bfa7e8189ab181843b9ac106678a628a, type: 3}
       propertyPath: m_Name
       value: Cola Can (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705129010167144, guid: bfa7e8189ab181843b9ac106678a628a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4528477828364640, guid: bfa7e8189ab181843b9ac106678a628a, type: 3}
       propertyPath: m_RootOrder
@@ -13398,7 +13431,7 @@ MonoBehaviour:
   _plateau: {fileID: 106549463}
   _IngredientHolder: {fileID: 162905382}
   _friePos: {x: 0, y: 0, z: 0}
-  _sodaPos: {x: 0, y: 0, z: 0}
+  _sodaPos: {x: 0, y: -0.4, z: 0}
 --- !u!65 &1547526143
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15462,6 +15495,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cola Can (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1705129010167144, guid: bfa7e8189ab181843b9ac106678a628a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4528477828364640, guid: bfa7e8189ab181843b9ac106678a628a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -15738,6 +15775,10 @@ PrefabInstance:
     - target: {fileID: 1705129010167144, guid: bfa7e8189ab181843b9ac106678a628a, type: 3}
       propertyPath: m_Name
       value: Cola Can
+      objectReference: {fileID: 0}
+    - target: {fileID: 1705129010167144, guid: bfa7e8189ab181843b9ac106678a628a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4528477828364640, guid: bfa7e8189ab181843b9ac106678a628a, type: 3}
       propertyPath: m_RootOrder
