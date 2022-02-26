@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sondecoupe: {fileID: 0}
   nbalimentdecoupe: 0
-  decoupe: {fileID: 0}
+  decoupe: {fileID: 5902836497067062612, guid: 6300f37484c776c45b44417ae1b645cd, type: 3}
   MaindCollider: {fileID: 0}
   nbcoup: 3
 --- !u!135 &6062069903741350943
