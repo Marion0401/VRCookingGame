@@ -10,6 +10,7 @@ public class FriteCreator : MonoBehaviour
     public int nb_frite_par_spawn = 10;
     public int max_frites_dans_saladier = 30;
     public Contenace Contenace;
+    public GameObject poele;
     void Start()
     {
         
@@ -27,7 +28,7 @@ public class FriteCreator : MonoBehaviour
             compteur = 0;
             for (int i = 0; i < nb_frite_par_spawn; i++)
             {
-                Instantiate(frite, transform.position, transform.rotation * Quaternion.Euler(-59, 28, 0f));
+                Instantiate(frite, transform.position, transform.rotation * Quaternion.Euler(-59, 28, 0f), poele.transform);
             }
         }
         else
