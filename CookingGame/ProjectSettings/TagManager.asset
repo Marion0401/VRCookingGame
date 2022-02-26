@@ -3,17 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Fluid
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - camera
+  - 
   - Water
   - UI
-  - aliment_decoupe
-  - 
-  - 
+  - Ingredients
+  - Assiettes
+  - Plateau
   - 
   - 
   - 
