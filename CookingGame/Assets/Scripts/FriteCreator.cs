@@ -5,6 +5,7 @@ using UnityEngine;
 public class FriteCreator : MonoBehaviour
 {
     public GameObject frite;
+    private GameObject frite_clone;
     public float compteur;
     public float time_spawn = 3;
     public int nb_frite_par_spawn = 10;
@@ -28,7 +29,9 @@ public class FriteCreator : MonoBehaviour
             compteur = 0;
             for (int i = 0; i < nb_frite_par_spawn; i++)
             {
-                Instantiate(frite, transform.position, transform.rotation * Quaternion.Euler(-59, 28, 0f), poele.transform);
+                frite_clone = Instantiate(frite, transform.position, transform.rotation * Quaternion.Euler(-59, 28, 0f));
+                frite_clone.transform.SetParent(poele.transform, false);
+                frite_clone.transform.localScale = new Vector3(1, 1, 1);
             }
         }
         else
