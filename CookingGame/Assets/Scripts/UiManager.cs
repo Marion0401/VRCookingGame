@@ -22,7 +22,7 @@ public class UiManager : MonoBehaviour
     public void OnPlayClicked()
     {
         Debug.Log("play");
-        SceneManager.LoadScene("MainHakim", LoadSceneMode.Single);
+        SceneManager.LoadScene("environnement", LoadSceneMode.Single);
     }
 
     public void OnSettingsClicked()

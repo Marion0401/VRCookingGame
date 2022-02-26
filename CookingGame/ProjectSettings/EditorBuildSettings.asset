@@ -8,12 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Start.unity
     guid: 69e7ada6d8e3a6d488a84700f3683b20
-  - enabled: 1
-    path: Assets/Scenes/MainHakim.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/New Scene.unity
     guid: b14c70783fb72cf46ab4deeb76cb03a7
+  - enabled: 1
+    path: Assets/Scenes/environnement.unity
+    guid: df9d1e8c0065f2c499cde14b0e331c84
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 11c77d80c27a86c478622ccee809455d, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 6dc63a6c9e1dc884d863ef3c39f67c2f, type: 2}
