@@ -15,7 +15,7 @@ namespace DefaultNamespace
         PAIN
     }
 
-    public class collisions : MonoBehaviour
+    public class SpawnAliment : MonoBehaviour
     {
         public int cutalimnb;
         private GameObject alimentdebase;
@@ -36,7 +36,7 @@ namespace DefaultNamespace
                     //alimentdebase= Resources.Load<GameObject>("=Tomato");
                     decoupe = Resources.Load<GameObject>("Tranch_Tomate");
                     Rigidbody rb = alimentdebase.AddComponent<Rigidbody>() as Rigidbody;
-                    var aaa = alimentdebase.GetComponent<Collision>();
+                    var aaa = alimentdebase.GetComponent<DecoupageAliment>();
                     aaa.MaindCollider = MaindCollider;
                     aaa.decoupe = decoupe;
                     aaa.nbalimentdecoupe = cutalimnb;
@@ -50,7 +50,7 @@ namespace DefaultNamespace
                     //alimentdebase= Resources.Load<GameObject>("=Sla");
                     decoupe = Resources.Load<GameObject>("FeuilleSalade");
                     Rigidbody rb = alimentdebase.AddComponent<Rigidbody>() as Rigidbody;
-                    var aaa = alimentdebase.GetComponent<Collision>();
+                    var aaa = alimentdebase.GetComponent<DecoupageAliment>();
                     aaa.MaindCollider = MaindCollider;
                     aaa.decoupe = decoupe;
                     aaa.nbalimentdecoupe = cutalimnb;
@@ -64,7 +64,7 @@ namespace DefaultNamespace
                     //alimentdebase= Resources.Load<GameObject>("=Sla");
                     decoupe = Resources.Load<GameObject>("Tranche_Pain");
                     Rigidbody rb = alimentdebase.AddComponent<Rigidbody>() as Rigidbody;
-                    var aaa = alimentdebase.GetComponent<Collision>();
+                    var aaa = alimentdebase.GetComponent<DecoupageAliment>();
                     aaa.MaindCollider = MaindCollider;
                     aaa.decoupe = decoupe;
                     aaa.nbalimentdecoupe = cutalimnb;

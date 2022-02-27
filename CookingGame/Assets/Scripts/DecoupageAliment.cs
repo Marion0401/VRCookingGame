@@ -7,10 +7,10 @@ using UnityEngine.Serialization;
 using UnityEngine.UI;
 namespace DefaultNamespace
 {
-    public class Collision :MonoBehaviour
+    public class DecoupageAliment :MonoBehaviour
     {
         [SerializeField] private AudioSource sondecoupe;
-        [SerializeField] private Collider planche;
+        [SerializeField] private GameObject planche;
         public float nbalimentdecoupe;
         public GameObject decoupe;
         public Collider MaindCollider;
@@ -22,8 +22,13 @@ namespace DefaultNamespace
         public void Awake()
         {
             parent = GameObject.Find("Nourriture");
+        }
+
+        public void Start()
+        {
             StartPosition = gameObject.transform;
         }
+
         private void OnTriggerEnter(Collider other)
         {
         
@@ -51,27 +56,12 @@ namespace DefaultNamespace
                 //Destroy(this.gameObject);
                 gameObject.transform.position = StartPosition.position;
                 gameObject.transform.rotation = StartPosition.rotation;
+                nbcoup = 3;
 
             }
         }
 
-        private void OnTriggerEnter(Collider2D other)
-        {
-            Debug.LogError(other.name);
-            if (other==planche)
-            {
-                Debug.LogError("GoodInPLanvhe");
-                isInPlanche = true;
-            }   
-        }
-
-        private void OnTriggerExit(Collider other)
-        {
-            if (other == planche)
-            {
-                isInPlanche = false;
-            }
-        }
+        
 
     }
 }
