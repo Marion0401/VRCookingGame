@@ -34,7 +34,7 @@ namespace DefaultNamespace
 
         private void Update()
         {
-            if (nbcoup == 0)
+            if (nbcoup <= 0)
             {
                 Debug.Log("Salade");
             

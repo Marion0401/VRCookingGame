@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -11,7 +9,7 @@ public class AssemblageBurger : MonoBehaviour
     [SerializeField] private GameObject _IngredientHolder;
     private List<GameObject> _listIngredientsGameObjects = new List<GameObject>();
     public List<EnumIngredient> listIngredientsType = new List<EnumIngredient>();
-    private float totalLocalHauteurY;
+    [SerializeField] private float totalLocalHauteurY;
     private float ancienneHauteurY;
     private LayerMask _ingredientLayer;
     private LayerMask _assietteLayer;
@@ -19,7 +17,7 @@ public class AssemblageBurger : MonoBehaviour
     private void Awake()
     {
         hasBeenGrapped = false;
-        totalLocalHauteurY = 1f;//1 car l'assiette sera le parent de tout or les enfant se réfère au scale du parent
+        totalLocalHauteurY = 0.04f;//1 car l'assiette sera le parent de tout or les enfant se réfère au scale du parent
         _ingredientLayer = LayerMask.NameToLayer("Ingredients");
         _assietteLayer = LayerMask.NameToLayer("Assiettes");
     }
@@ -62,11 +60,11 @@ public class AssemblageBurger : MonoBehaviour
             //que l'utilisateur le dépose pour pouvoir le modifier
             hasBeenGrapped = true;
         }
-        
+
         //Quand l'utilisateur dépose l'objet
         if ((nbOfIngredientInList == nbOfIngredientInChild) & hasBeenGrapped)
         {
-            LastIngredientGrapped(_listIngredientsGameObjects[nbOfIngredientInList-1]);
+            LastIngredientGrapped(_listIngredientsGameObjects[nbOfIngredientInList - 1]);
             hasBeenGrapped = false;
         }
     }
@@ -78,51 +76,51 @@ public class AssemblageBurger : MonoBehaviour
         child.layer = _assietteLayer;//L'ingrédient devient une partie de l'assiette
         child.transform.localRotation = Quaternion.identity;
         child.transform.parent = parent.transform;
-        totalLocalHauteurY += child.transform.localScale.y/2f + ancienneHauteurY;
+        totalLocalHauteurY += child.transform.localScale.y / 2f + ancienneHauteurY;
         ancienneHauteurY = child.transform.localScale.y / 2f;
         child.GetComponent<Rigidbody>().isKinematic = true;
-        child.transform.localPosition = new Vector3(0f,totalLocalHauteurY,0f);
-        
-        if (nbOfIngredientInList!=0)
+        child.transform.localPosition = new Vector3(0f, totalLocalHauteurY, 0f);
+
+        if (nbOfIngredientInList != 0)
         {
-            _listIngredientsGameObjects[nbOfIngredientInList-1].GetComponent<XRGrabInteractable>().enabled = false;
+            _listIngredientsGameObjects[nbOfIngredientInList - 1].GetComponent<XRGrabInteractable>().enabled = false;
         }
-        
+
     }
 
     private void NewAssemblerMakerPosition(float yMovement)
     {
-        transform.position += new Vector3(0,yMovement/5f, 0);
+        transform.position += new Vector3(0, yMovement / 5f, 0);
     }
 
     public void LastIngredientGrapped(GameObject ingredient)
     {
         Transform ingredientTransform = ingredient.transform;
         float ingredientTransformLocalScaleY = ingredientTransform.localScale.y;
-        
+
         //On réinitialise l'ingrédient qui a été enlevé de l'hamburger
         ingredientTransform.parent = _IngredientHolder.transform;
         ingredient.layer = _ingredientLayer;
         ingredient.GetComponent<Rigidbody>().isKinematic = false;
-        
+
         //L'ingrédient ne fait plus partie de l'hamburger, donc, il ne fait plus partie des listes
         _listIngredientsGameObjects.Remove(ingredient);
-        listIngredientsType.RemoveAt(listIngredientsType.Count-1);
+        listIngredientsType.RemoveAt(listIngredientsType.Count - 1);
         _plateau.GetComponent<IngredientOnPlateau>().burgerIngredient = listIngredientsType;
-        
+
         //On reset la position de la hitbox
-        totalLocalHauteurY -= ingredientTransformLocalScaleY/2f + ancienneHauteurY;
+        totalLocalHauteurY -= ingredientTransformLocalScaleY / 2f + ancienneHauteurY;
         ancienneHauteurY = ingredientTransformLocalScaleY / 2f;
-        NewAssemblerMakerPosition(-ingredientTransformLocalScaleY/2f);
-        
+        NewAssemblerMakerPosition(-ingredientTransformLocalScaleY / 2f);
+
         //On fait en sorte que le nouveau dernier ingredient est grappable par l'utilisateur
-        if (_listIngredientsGameObjects.Count!=0)
+        if (_listIngredientsGameObjects.Count != 0)
         {
-            _listIngredientsGameObjects[_listIngredientsGameObjects.Count-1].GetComponent<XRGrabInteractable>().enabled = true;
+            _listIngredientsGameObjects[_listIngredientsGameObjects.Count - 1].GetComponent<XRGrabInteractable>().enabled = true;
         }
-        
-        
-        
+
+
+
     }
 
     public void ResetBurger()

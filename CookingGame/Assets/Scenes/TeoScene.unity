@@ -7254,10 +7254,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 173dc88e55d221b4c915f39f5e72c775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plateau: {fileID: 2091832780}
+  _plateau: {fileID: 701935453}
   _IngredientHolder: {fileID: 162905382}
-  _friePos: {x: 0, y: 0, z: 0}
-  _sodaPos: {x: 0, y: -0.4, z: 0}
+  _friePos: {x: 0.14, y: -0.4, z: -0.32}
+  _sodaPos: {x: 0.39, y: -0.4, z: -0.32}
 --- !u!65 &366887427
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7703,8 +7703,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _plateau: {fileID: 701935453}
   _IngredientHolder: {fileID: 162905382}
-  _friePos: {x: 0, y: 0, z: 0}
-  _sodaPos: {x: 0, y: -0.4, z: 0}
+  _friePos: {x: 0.14, y: -0.4, z: -0.32}
+  _sodaPos: {x: 0.39, y: -0.4, z: -0.32}
 --- !u!65 &450001876
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9320,7 +9320,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 815498048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.124, y: 1.21, z: 5.55}
+  m_LocalPosition: {x: -2.124, y: 1.662, z: 5.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10346,6 +10346,10 @@ PrefabInstance:
       propertyPath: parent
       value: 
       objectReference: {fileID: 162905383}
+    - target: {fileID: 7410026850895181459, guid: bfa7e8189ab181843b9ac106678a628a, type: 3}
+      propertyPath: typeOfIngredient
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfa7e8189ab181843b9ac106678a628a, type: 3}
 --- !u!1 &1184395545
@@ -13271,10 +13275,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 173dc88e55d221b4c915f39f5e72c775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plateau: {fileID: 106549463}
+  _plateau: {fileID: 701935453}
   _IngredientHolder: {fileID: 162905382}
-  _friePos: {x: 0, y: 0, z: 0}
-  _sodaPos: {x: 0, y: -0.4, z: 0}
+  _friePos: {x: 0.14, y: -0.4, z: -0.32}
+  _sodaPos: {x: 0.39, y: -0.4, z: -0.32}
 --- !u!65 &1547526143
 BoxCollider:
   m_ObjectHideFlags: 0
