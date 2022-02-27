@@ -8689,6 +8689,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &629290037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629290034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ad40f707c46e64599ff8dcb9dfe5bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poele: {fileID: 1599170841}
+  isInPoele: 0
+  compteur: 0
+  temps_cuisson: 3
+  steak_cuit: {fileID: 3041045292407488475, guid: b186793e575a1dd469f7d0c2b72f754e, type: 3}
 --- !u!1 &632309354
 GameObject:
   m_ObjectHideFlags: 0
