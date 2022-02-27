@@ -41,9 +41,9 @@ public class QueueManager : MonoBehaviour
 
     public void ClientExit(int index)
     {
-        if (index <= queue.Count && CounterOccupied[index-1]!=0)
+        if (index <= queue.Count && CounterOccupied[index - 1] != 0)
         {
-            ClientQueuer exiting = ClientAtSpot[index-1].GetComponent<ClientQueuer>();
+            ClientQueuer exiting = ClientAtSpot[index - 1].GetComponent<ClientQueuer>();
             if (exiting.atPlace)
             {
                 queue.RemoveAt(index - 1);
@@ -83,11 +83,11 @@ public class QueueManager : MonoBehaviour
     void Update()
     {
 
-        if (startEndCheckDelay < 2 * spawnDelay && queue.Count>0)
+        if (startEndCheckDelay < 2 * spawnDelay && queue.Count > 0)
         {
             startEndCheckDelay += Time.deltaTime;
         }
-        else if (!allClientsHaveBeenServed && queue.Count <=0)
+        else if (!allClientsHaveBeenServed && queue.Count <= 0)
         {
             allClientsHaveBeenServed = true;
         }
@@ -104,8 +104,8 @@ public class QueueManager : MonoBehaviour
 
         }
 
-        if(autoLeave)
-        { 
+        if (autoLeave)
+        {
 
             int sumCounterOcc = (int)(CounterOccupied.x + CounterOccupied.y + CounterOccupied.z);
             rowHasBeenFilled = (sumCounterOcc == 3);
@@ -120,6 +120,6 @@ public class QueueManager : MonoBehaviour
 
             }
         }
-        
+
     }
 }
