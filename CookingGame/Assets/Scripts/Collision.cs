@@ -15,6 +15,12 @@ namespace DefaultNamespace
         public GameObject decoupe;
         public Collider MaindCollider;
         public int nbcoup=3;
+        public GameObject parent;
+
+        public void Awake()
+        {
+            parent = GameObject.Find("Nourriture");
+        }
         private void OnTriggerEnter(Collider other)
         {
         
@@ -36,7 +42,7 @@ namespace DefaultNamespace
                 {
                     
                     Instantiate(decoupe, transform.position+new Vector3(0,1.5f*i,0), 
-                        transform.rotation*Quaternion.Euler(new Vector3(0,3*i,0)));
+                        transform.rotation*Quaternion.Euler(new Vector3(0,3*i,0)), parent.transform);
                 }
                 
                 Destroy(this.gameObject);

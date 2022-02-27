@@ -8,6 +8,8 @@ public class SpawnTakenObject : MonoBehaviour
     private bool hasMoved;
     private bool atPlace=true; 
     private Vector3 place;
+    public Transform parent;
+    private bool hasbeengrabed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +30,20 @@ public class SpawnTakenObject : MonoBehaviour
         
         if (hasMoved)
         {
-            Instantiate(objectToSpawn, place, Quaternion.identity);
+            Instantiate(objectToSpawn, place, Quaternion.identity, parent);
             hasMoved = false;
         }
+
+        if (gameObject.transform.parent == null)
+        {
+            hasbeengrabed = true;
+        }
+
+        if (hasbeengrabed && gameObject.transform.parent!=null)
+        {
+            gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            gameObject.GetComponent<Rigidbody>().useGravity = true;
+        }
+
     }
 }
