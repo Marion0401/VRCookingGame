@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33763495029525958}
   - component: {fileID: 23466150907217158}
   - component: {fileID: 65440559600974806}
+  - component: {fileID: 7410026850895181459}
   m_Layer: 0
   m_Name: Cola Can
   m_TagString: Untagged
@@ -95,3 +96,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.09494366, y: 0.15346396, z: 0.09029679}
   m_Center: {x: 0.000000007450581, y: 0.07673198, z: -0.000000007450581}
+--- !u!114 &7410026850895181459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705129010167144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e436933c2b60f8f4e8e959594d8a1e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeOfIngredient: 4
