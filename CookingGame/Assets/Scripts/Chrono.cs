@@ -9,9 +9,9 @@ public class Chrono : MonoBehaviour
 {
     float startChrono;
     float endChrono;
-    bool variableCome;
     public GameObject canvasEnd;
     public Text textChrono;
+    QueueManager QueueManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +22,7 @@ public class Chrono : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (variableCome)
+        if (QueueManager.allClientsHaveBeenServed)
         {
             endChrono = Time.time;
             string displayChrono=GiveChrono(startChrono, endChrono);
