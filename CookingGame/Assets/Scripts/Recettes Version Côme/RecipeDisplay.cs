@@ -238,4 +238,22 @@ public class Order
         return newHotDog;
     }
 
+    public bool CompareWithOrder(Order other)
+    {
+        bool comparison = true;
+
+        if (drink != other.drink || hasDrink != other.hasDrink || fries != other.fries || hasFries != other.hasFries || main != other.main) comparison = false;
+
+        if (mainIngredientList.Count == other.mainIngredientList.Count)
+        {
+            for (int i = 0; i < mainIngredientList.Count; i++)
+            {
+                if (mainIngredientList[i] != other.mainIngredientList[i]) comparison = false;
+            }
+        }
+        else comparison = false;
+
+        return comparison;
+    }
+
 }
