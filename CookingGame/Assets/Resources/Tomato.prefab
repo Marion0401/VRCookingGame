@@ -111,8 +111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72bd4f0a57a74b6a814e248b3614a440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sondecoupe: {fileID: 0}
-  planche: {fileID: 0}
   nbalimentdecoupe: 3
   decoupe: {fileID: 5902836497067062612, guid: 3592403a43379384eb37f830af67a1dd, type: 3}
   MaindCollider: {fileID: 0}
@@ -133,7 +131,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &4868066550653953914
 MonoBehaviour:

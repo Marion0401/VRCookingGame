@@ -53,7 +53,7 @@ public class AssemblageBurger : MonoBehaviour
     private void Update()
     {
         int nbOfIngredientInList = _listIngredientsGameObjects.Count;
-        int nbOfIngredientInChild = _assiette.GetComponentsInChildren<GameObject>().Length - 2;
+        int nbOfIngredientInChild = _assiette.GetComponentsInChildren<Transform>().Length - 2;
         Debug.Log("nbOfIngredientInList" + nbOfIngredientInList);
         Debug.Log("nbOfIngredientInChild" + nbOfIngredientInChild);
         //Quand un objet est attraper par l'utilisateur, il revient en haut de l'arboraissance et n'a plus de parent

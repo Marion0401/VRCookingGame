@@ -35,7 +35,7 @@ namespace DefaultNamespace
                     alimentdebase = Instantiate(Resources.Load("Tomato", typeof(GameObject)), transform) as GameObject;
                     //alimentdebase= Resources.Load<GameObject>("=Tomato");
                     decoupe = Resources.Load<GameObject>("Tranch_Tomate");
-                    Rigidbody rb = alimentdebase.AddComponent<Rigidbody>() as Rigidbody;
+                    Rigidbody rb = alimentdebase.GetComponent<Rigidbody>() as Rigidbody;
                     var aaa = alimentdebase.GetComponent<DecoupageAliment>();
                     aaa.MaindCollider = MaindCollider;
                     aaa.decoupe = decoupe;
@@ -49,12 +49,12 @@ namespace DefaultNamespace
                     alimentdebase = Instantiate(Resources.Load("Sla", typeof(GameObject)), transform) as GameObject;
                     //alimentdebase= Resources.Load<GameObject>("=Sla");
                     decoupe = Resources.Load<GameObject>("FeuilleSalade");
-                    Rigidbody rb = alimentdebase.AddComponent<Rigidbody>() as Rigidbody;
+                    Rigidbody rb = alimentdebase.GetComponent<Rigidbody>() as Rigidbody;
                     var aaa = alimentdebase.GetComponent<DecoupageAliment>();
                     aaa.MaindCollider = MaindCollider;
                     aaa.decoupe = decoupe;
                     aaa.nbalimentdecoupe = cutalimnb;
-                    rb.useGravity = false;
+                    //rb.useGravity = false;
                     break;
                 }
                 case (Aliments.PAIN):
@@ -63,7 +63,7 @@ namespace DefaultNamespace
                     alimentdebase = Instantiate(Resources.Load("Bread", typeof(GameObject)), transform) as GameObject;
                     //alimentdebase= Resources.Load<GameObject>("=Sla");
                     decoupe = Resources.Load<GameObject>("Tranche_Pain");
-                    Rigidbody rb = alimentdebase.AddComponent<Rigidbody>() as Rigidbody;
+                    Rigidbody rb = alimentdebase.GetComponent<Rigidbody>() as Rigidbody;
                     var aaa = alimentdebase.GetComponent<DecoupageAliment>();
                     aaa.MaindCollider = MaindCollider;
                     aaa.decoupe = decoupe;

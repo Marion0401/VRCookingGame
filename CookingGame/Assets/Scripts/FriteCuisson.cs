@@ -43,7 +43,7 @@ public class FriteCuisson : MonoBehaviour
         {
             Debug.Log("enter");
             isInPoele = true;
-            this.transform.parent = poele.transform;
+            //this.transform.parent = poele.transform;
         }
     }
 
@@ -53,7 +53,7 @@ public class FriteCuisson : MonoBehaviour
         {
             Debug.Log("exit");
             isInPoele = false;
-            transform.parent = null;
+            //transform.parent = null;
         }
     }
 
