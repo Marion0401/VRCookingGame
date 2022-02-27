@@ -11,5 +11,6 @@ public enum EnumIngredient
     Coca,
     Frites,
     Fromage,
+    Pain,
 
 }

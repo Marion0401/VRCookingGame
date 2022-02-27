@@ -71,7 +71,12 @@ public class ClientQueuer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GetComponentInChildren<Animator>().SetFloat("MoveSpeed",0.5f);
         possibleMove = (DistanceToNext() > 1.5f);
+        if (!possibleMove)
+        {
+            GetComponentInChildren<Animator>().SetFloat("MoveSpeed",0f);
+        }
         //print(DistanceToNext().ToString() + " " + orderInQueue.ToString());
         //destination.y = transform.localScale.y / 2;
         if (passedCheckpoints<manager.Checkpoints.Count - 3 && possibleMove)
@@ -94,6 +99,7 @@ public class ClientQueuer : MonoBehaviour
         {
             if(!selectedPlace && !atPlace)
             {
+                GetComponentInChildren<Animator>().SetFloat("MoveSpeed",0f);
                 for (int i = 0; i < 3; i++)
                 {
                     if (manager.CounterOccupied[i] == 0)
@@ -121,14 +127,15 @@ public class ClientQueuer : MonoBehaviour
 
                     atPlace = true;
                     transform.LookAt(transform.position + directionToLookAt);
+                    GetComponentInChildren<Animator>().SetFloat("MoveSpeed",0f);
                 }
             }
 
             if (atPlace)
             {
-               
+                GetComponentInChildren<Animator>().SetFloat("MoveSpeed",0f);
             }
-            
+
 
 
             /*
@@ -152,8 +159,9 @@ public class ClientQueuer : MonoBehaviour
             }
             */
         }
-
-
-
+        else
+        {
+            GetComponentInChildren<Animator>().SetFloat("MoveSpeed",0f);
+        }
     }
 }
