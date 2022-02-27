@@ -9,8 +9,8 @@ namespace DefaultNamespace
 {
     public class DecoupageAliment :MonoBehaviour
     {
-        [SerializeField] private AudioSource sondecoupe;
-        [SerializeField] private GameObject planche;
+        //[SerializeField] private AudioSource sondecoupe;
+        //[SerializeField] private GameObject planche;
         public float nbalimentdecoupe;
         public GameObject decoupe;
         public Collider MaindCollider;
@@ -32,10 +32,10 @@ namespace DefaultNamespace
         private void OnTriggerEnter(Collider other)
         {
         
-            if (other == MaindCollider)
+            if (other == MaindCollider && isInPlanche)
             {
                 Debug.Log("coup dans la salade");
-                sondecoupe.Play();
+                //sondecoupe.Play();
                 nbcoup--;
             }
         }
@@ -56,6 +56,7 @@ namespace DefaultNamespace
                 //Destroy(this.gameObject);
                 gameObject.transform.position = StartPosition.position;
                 gameObject.transform.rotation = StartPosition.rotation;
+                
                 nbcoup = 3;
 
             }

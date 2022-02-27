@@ -98,14 +98,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72bd4f0a57a74b6a814e248b3614a440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sondecoupe: {fileID: 0}
-  planche: {fileID: 0}
   nbalimentdecoupe: 2
   decoupe: {fileID: 5902836497067062612, guid: 6300f37484c776c45b44417ae1b645cd, type: 3}
-  MaindCollider: {fileID: 0}
+  MaindCollider: {fileID: 1739542054, guid: 733c9f99aae6b2a4387b2583f86820e3, type: 3}
   nbcoup: 3
   parent: {fileID: 0}
-  isInPlanche: 0
+  isInPlanche: 1
 --- !u!135 &6062069903741350943
 SphereCollider:
   m_ObjectHideFlags: 0

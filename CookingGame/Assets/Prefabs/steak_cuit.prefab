@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8387242903299550475}
   - component: {fileID: 3814345035718895278}
   - component: {fileID: 1707354555341830052}
-  m_Layer: 0
+  - component: {fileID: 5315924002214603294}
+  m_Layer: 6
   m_Name: steak_cuit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,3 +96,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5315924002214603294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3041045292407488475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e436933c2b60f8f4e8e959594d8a1e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeOfIngredient: 3

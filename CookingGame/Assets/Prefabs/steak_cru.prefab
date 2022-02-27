@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 6873581241376795052}
   - component: {fileID: 6873581241376795053}
   - component: {fileID: 6873581241376795049}
-  m_Layer: 0
+  - component: {fileID: 6141710405102165369}
+  m_Layer: 6
   m_Name: steak_cru
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,3 +114,16 @@ MonoBehaviour:
   compteur: 0
   temps_cuisson: 3
   steak_cuit: {fileID: 3041045292407488475, guid: b186793e575a1dd469f7d0c2b72f754e, type: 3}
+--- !u!114 &6141710405102165369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6873581241376795054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e436933c2b60f8f4e8e959594d8a1e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeOfIngredient: 3

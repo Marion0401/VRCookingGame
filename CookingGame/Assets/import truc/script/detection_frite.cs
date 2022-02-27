@@ -8,8 +8,7 @@ public class detection_frite : MonoBehaviour
     [SerializeField] private GameObject frite;
     private int frites_contenu = 0;
     [SerializeField] private GameObject parent;
-    public bool peutEtreServi = false;
-    
+    [SerializeField] private IngredientType IngredientType;
     public void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.tag);
@@ -36,12 +35,12 @@ public class detection_frite : MonoBehaviour
         if (frites_contenu > 4)
         {
             Debug.Log("il y a au moins 5 frites");
-            peutEtreServi = true;
+            IngredientType.typeOfIngredient = EnumIngredient.Frites;
         }
         else
         {
             Debug.Log("il y a moins de 5 frites");
-            peutEtreServi = false;
+            IngredientType.typeOfIngredient = EnumIngredient.None;
         }
     }
 }
