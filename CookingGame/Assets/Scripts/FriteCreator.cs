@@ -31,7 +31,8 @@ public class FriteCreator : MonoBehaviour
             {
                 frite_clone = Instantiate(frite, transform.position, transform.rotation * Quaternion.Euler(-59, 28, 0f));
                 frite_clone.transform.SetParent(poele.transform, false);
-                frite_clone.transform.localScale = new Vector3(1, 1, 1);
+                frite_clone.transform.localScale = new Vector3((float)(0.15201 / 16), (float)(0.15201 / 16), (float)(0.374687 / 16));
+                frite_clone.transform.position = gameObject.transform.position;
             }
         }
         else
