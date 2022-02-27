@@ -6217,6 +6217,52 @@ MonoBehaviour:
   burgerIngredient: 
   frieIngredient: 0
   sodaIngredient: 0
+--- !u!114 &106549465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106549463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bdffc8475d426b449f65804f8b1490a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Screen: {fileID: 1436522768}
+  Plateau: {fileID: 106549466}
+  areTheSame: 0
+--- !u!114 &106549466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106549463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92b657f671768e488d56d35bba42194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDrink: 0
+  drink: 0
+  hasFries: 0
+  fries: 0
+  main: 1
+  mainIngredientList: 
+  numberOfItem: 0
+--- !u!114 &106549467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106549463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e743732af95d5e48aa45bd367d6bd74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &129748640
 GameObject:
   m_ObjectHideFlags: 0
@@ -7306,7 +7352,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408904528}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -8638,6 +8684,52 @@ MonoBehaviour:
   burgerIngredient: 
   frieIngredient: 0
   sodaIngredient: 0
+--- !u!114 &701935455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701935453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bdffc8475d426b449f65804f8b1490a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Screen: {fileID: 2024339934}
+  Plateau: {fileID: 701935456}
+  areTheSame: 0
+--- !u!114 &701935456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701935453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92b657f671768e488d56d35bba42194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDrink: 0
+  drink: 0
+  hasFries: 0
+  fries: 0
+  main: 1
+  mainIngredientList: 
+  numberOfItem: 0
+--- !u!114 &701935457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701935453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e743732af95d5e48aa45bd367d6bd74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &703989719
 GameObject:
   m_ObjectHideFlags: 0
@@ -10721,7 +10813,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1085228497}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -11302,7 +11394,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184395545}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -12296,6 +12388,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  allClientsHaveBeenServed: 0
+  TotalNumberofClients: 30
   QueueCapacity: 10
   queue: []
   autoSpawn: 1
@@ -12890,6 +12984,7 @@ GameObject:
   - component: {fileID: 1345855570}
   - component: {fileID: 1345855569}
   - component: {fileID: 1345855568}
+  - component: {fileID: 1345855573}
   m_Layer: 5
   m_Name: Screen 2
   m_TagString: Untagged
@@ -12999,6 +13094,25 @@ RectTransform:
   m_AnchoredPosition: {x: -5.25, y: 0.33}
   m_SizeDelta: {x: 45.4485, y: 26.0413}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1345855573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345855567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92b657f671768e488d56d35bba42194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDrink: 0
+  drink: 0
+  hasFries: 0
+  fries: 0
+  main: 1
+  mainIngredientList: 
+  numberOfItem: 0
 --- !u!1 &1385961293
 GameObject:
   m_ObjectHideFlags: 0
@@ -13452,6 +13566,7 @@ GameObject:
   - component: {fileID: 1436522765}
   - component: {fileID: 1436522764}
   - component: {fileID: 1436522763}
+  - component: {fileID: 1436522768}
   m_Layer: 5
   m_Name: Screen 1
   m_TagString: Untagged
@@ -13561,6 +13676,25 @@ RectTransform:
   m_AnchoredPosition: {x: -4.89, y: 0.01}
   m_SizeDelta: {x: 45.4485, y: 26.0413}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1436522768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436522762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92b657f671768e488d56d35bba42194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDrink: 0
+  drink: 0
+  hasFries: 0
+  fries: 0
+  main: 1
+  mainIngredientList: 
+  numberOfItem: 0
 --- !u!1 &1447861482
 GameObject:
   m_ObjectHideFlags: 0
@@ -13917,7 +14051,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514075143}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -15280,7 +15414,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1744881837}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -15646,7 +15780,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1845568669}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -16828,6 +16962,7 @@ GameObject:
   - component: {fileID: 2024339931}
   - component: {fileID: 2024339930}
   - component: {fileID: 2024339929}
+  - component: {fileID: 2024339934}
   m_Layer: 5
   m_Name: Screen 3
   m_TagString: Untagged
@@ -16937,6 +17072,25 @@ RectTransform:
   m_AnchoredPosition: {x: -6.01, y: 0}
   m_SizeDelta: {x: 45.4485, y: 26.0413}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2024339934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024339928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92b657f671768e488d56d35bba42194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDrink: 0
+  drink: 0
+  hasFries: 0
+  fries: 0
+  main: 1
+  mainIngredientList: 
+  numberOfItem: 0
 --- !u!1 &2077216935
 GameObject:
   m_ObjectHideFlags: 0
@@ -17126,6 +17280,52 @@ MonoBehaviour:
   burgerIngredient: 
   frieIngredient: 0
   sodaIngredient: 0
+--- !u!114 &2091832782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091832780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bdffc8475d426b449f65804f8b1490a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Screen: {fileID: 1345855573}
+  Plateau: {fileID: 2091832783}
+  areTheSame: 0
+--- !u!114 &2091832783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091832780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92b657f671768e488d56d35bba42194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDrink: 0
+  drink: 0
+  hasFries: 0
+  fries: 0
+  main: 1
+  mainIngredientList: 
+  numberOfItem: 0
+--- !u!114 &2091832784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091832780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e743732af95d5e48aa45bd367d6bd74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2111873319
 PrefabInstance:
   m_ObjectHideFlags: 0
