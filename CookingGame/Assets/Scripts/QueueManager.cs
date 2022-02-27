@@ -11,12 +11,15 @@ public class QueueManager : MonoBehaviour
     public Vector3 CounterOccupied = Vector3.zero;
     public GameObject[] ClientAtSpot = new GameObject[3];
 
+
+    public bool allClientsHaveBeenServed = false;
+    [SerializeField] public int TotalNumberofClients = 30;
     [SerializeField] int QueueCapacity = 5;
     public List<ClientQueuer> queue = new List<ClientQueuer>();
 
     [SerializeField] public bool autoSpawn = false;
     [SerializeField] public bool autoLeave = false;
-
+    float startEndCheckDelay = 0;
     float counterSpawn = 0;
     [Space] [SerializeField] float spawnDelay = 2f;
     [SerializeField] [Range(0, 1)] float clientDoneChance = 0.001f;
@@ -79,6 +82,16 @@ public class QueueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (startEndCheckDelay < 2 * spawnDelay && queue.Count>0)
+        {
+            startEndCheckDelay += Time.deltaTime;
+        }
+        else if (!allClientsHaveBeenServed && queue.Count <=0)
+        {
+            allClientsHaveBeenServed = true;
+        }
+
 
         if (autoSpawn)
         {
