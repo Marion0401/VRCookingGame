@@ -6,10 +6,9 @@ using UnityEngine;
 public class detection_frite : MonoBehaviour
 {
     [SerializeField] private GameObject frite;
-    [SerializeField] private Color colorok;
-    [SerializeField] private Color colornotok;
     private int frites_contenu = 0;
-    [SerializeField] private GameObject objet_qui_change_de_couleur;
+    [SerializeField] private GameObject parent;
+    public bool peutEtreServi = false;
     
     public void OnTriggerEnter(Collider other)
     {
@@ -17,6 +16,8 @@ public class detection_frite : MonoBehaviour
         if (other.tag == frite.tag)
         {
             frites_contenu += 1;
+            other.transform.SetParent(parent.transform);
+            VerifNbFrite();
         }
     }
 
@@ -25,14 +26,22 @@ public class detection_frite : MonoBehaviour
         if (other.tag == frite.tag)
         {
             frites_contenu -= 1;
+            other.transform.DetachChildren();
+            VerifNbFrite();
         }
     }
 
-    private void Update()
+    private void VerifNbFrite()
     {
         if (frites_contenu > 4)
         {
             Debug.Log("il y a au moins 5 frites");
+            peutEtreServi = true;
+        }
+        else
+        {
+            Debug.Log("il y a moins de 5 frites");
+            peutEtreServi = false;
         }
     }
 }
