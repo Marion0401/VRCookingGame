@@ -17,6 +17,8 @@ public class IngredientOnPlateau : MonoBehaviour
         frieIngredient = EnumIngredient.None;
         sodaIngredient = EnumIngredient.None;
         burgerIngredient = new List<EnumIngredient>();
+        GetComponent<PlateauToOrder>().UpdateOrder();
+        GetComponent<CompareOrders>().UpdateOrder();
     }
 
 }

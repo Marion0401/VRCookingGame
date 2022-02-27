@@ -43,6 +43,7 @@ public class AssemblageBurger : MonoBehaviour
                     _listIngredientsGameObjects.Add(otherGameObject);
                     listIngredientsType.Add(other.GetComponent<IngredientType>().typeOfIngredient);
                     _plateau.GetComponent<IngredientOnPlateau>().burgerIngredient = listIngredientsType;
+                    _plateau.GetComponent<PlateauToOrder>().UpdateOrder();
                 }
             }
         }

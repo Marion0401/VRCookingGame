@@ -65,6 +65,7 @@ public class AssemblageBoissonFrie : MonoBehaviour
                     soda = otherGameObject;
                     JoinSoda(otherGameObject);
                 }
+                _plateau.GetComponent<PlateauToOrder>().UpdateOrder();
             }
         }
             
@@ -105,5 +106,6 @@ public class AssemblageBoissonFrie : MonoBehaviour
         frie = null;
         soda = null;
         sodaHasBeenGrab = false;
+
     }
 }

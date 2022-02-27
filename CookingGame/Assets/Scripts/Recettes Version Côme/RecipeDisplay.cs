@@ -181,6 +181,7 @@ public enum Ingredient
     Salad,
     Tomato,
     Steak,
+    Cheese,
     TopBread,
     HotDogBread,
     Sausage,
@@ -236,6 +237,24 @@ public class Order
     {
         List<Ingredient> newHotDog = new List<Ingredient>() { Ingredient.HotDogBread, Ingredient.Sausage };
         return newHotDog;
+    }
+
+    public bool CompareWithOrder(Order other)
+    {
+        bool output = true;
+
+        if (hasDrink != other.hasDrink || drink != other.drink || hasFries != other.hasFries || fries != other.fries || main != other.main) output = false;
+
+        if (mainIngredientList.Count != other.mainIngredientList.Count) output = false;
+        else
+        {
+            for (int i = 0; i< mainIngredientList.Count; i++)
+            {
+                if (mainIngredientList[i] != other.mainIngredientList[i]) output = false;
+            }
+        }
+
+        return output;
     }
 
 }
