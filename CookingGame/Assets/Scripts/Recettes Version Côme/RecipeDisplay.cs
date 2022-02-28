@@ -15,8 +15,10 @@ public class RecipeDisplay : MonoBehaviour
     public Transform positionFood;
     Vector3 initialPositionFood;
     [SerializeField] GameObject plusPrefab;
+    [SerializeField] GameObject GreenValidation;
     [SerializeField] GameObject VerticalLayoutPrefab;
     [SerializeField] Image ScreenColor;
+    
     
     [SerializeField] List<GameObject> listDrink = new List<GameObject>();
     
@@ -24,7 +26,8 @@ public class RecipeDisplay : MonoBehaviour
     
     public List<GameObject> entireOrderObjects = new List<GameObject>();
 
-
+    float greenCounter = 0;
+    bool counting = true;
 
     // Start is called before the first frame update
     void Awake()
@@ -35,13 +38,13 @@ public class RecipeDisplay : MonoBehaviour
 
     private void Start()
     {
-        ScreenColor.color = new Color(80/255, 80/255, 80/255);
+        ScreenColor.color = new Color(150/255, 150/255, 150/255);
     }
 
 
     public Order GenerateOrder()
     {
-        print(displayNumber);
+        //print(displayNumber);
         Order newOrder = new Order();
 
         if (Random.Range(0,2) == 0) { newOrder.hasDrink = true; newOrder.drink = Ingredient.Drink; newOrder.numberOfItem++; }
@@ -65,6 +68,8 @@ public class RecipeDisplay : MonoBehaviour
 
     public void StartDIsplay()
     {
+        OffScreen();
+
         ScreenColor.color = new Color(1, 1, 1);
         recipeDisplayed = true;
         CurrentOrder = GenerateOrder();
@@ -151,17 +156,49 @@ public class RecipeDisplay : MonoBehaviour
 
     public void ExitDisplay()
     {
-        ScreenColor.color = new Color(80 / 255, 80 / 255, 80 / 255);
+        //ScreenColor.color = new Color(80 / 255, 80 / 255, 80 / 255);
 
         recipeDisplayed = false;
         foreach (GameObject item in entireOrderObjects) Destroy(item);
         entireOrderObjects = new List<GameObject>();
 
         positionFood.transform.DetachChildren();
+
+        ValidScreen();
+    }
+
+    public void ValidScreen()
+    {
+        counting = true;
+
+        GameObject GreenValid = Instantiate(GreenValidation, new Vector3(0, 0, 0), Quaternion.identity);
+        GreenValid.transform.SetParent(positionFood, false);
+        entireOrderObjects.Add(GreenValid);
+    }
+
+    public void OffScreen()
+    {
+        ScreenColor.color = new Color(150 / 255, 150 / 255, 150 / 255);
+
+        foreach (GameObject item in entireOrderObjects) Destroy(item);
+        entireOrderObjects = new List<GameObject>();
     }
 
     void Update()
     {
+
+        if(counting)
+        {
+            greenCounter += Time.deltaTime;
+            if (greenCounter >= 1.0f)
+            {
+                counting = false;
+                greenCounter = 0;
+
+                OffScreen();
+            }
+        }
+
 
     }
 }
@@ -239,22 +276,6 @@ public class Order
         return newHotDog;
     }
 
-    public bool CompareWithOrder(Order other)
-    {
-        bool output = true;
-
-        if (hasDrink != other.hasDrink || drink != other.drink || hasFries != other.hasFries || fries != other.fries || main != other.main) output = false;
-
-        if (mainIngredientList.Count != other.mainIngredientList.Count) output = false;
-        else
-        {
-            for (int i = 0; i< mainIngredientList.Count; i++)
-            {
-                if (mainIngredientList[i] != other.mainIngredientList[i]) output = false;
-            }
-        }
-
-        return output;
-    }
+    
 
 }

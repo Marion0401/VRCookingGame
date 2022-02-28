@@ -41,7 +41,7 @@ namespace DefaultNamespace
                     aaa.decoupe = decoupe;
                     aaa.nbalimentdecoupe = cutalimnb;
                     aaa.nbcoup = nbcoup;
-                    rb.useGravity = false;
+                    //rb.useGravity = false;
                     break;
                 }
                 case (Aliments.SALADE):
@@ -68,7 +68,7 @@ namespace DefaultNamespace
                     aaa.MaindCollider = MaindCollider;
                     aaa.decoupe = decoupe;
                     aaa.nbalimentdecoupe = cutalimnb;
-                    rb.useGravity = false;
+                    //rb.useGravity = false;
                     break;
                 }
             }

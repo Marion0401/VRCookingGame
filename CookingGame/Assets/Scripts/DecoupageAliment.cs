@@ -17,7 +17,10 @@ namespace DefaultNamespace
         public int nbcoup=3;
         public GameObject parent;
         public bool isInPlanche=false;
-        private Transform StartPosition;
+
+        private Vector3 StartPosition;
+        private Quaternion StartRotation;
+        private int coupsDebut;
 
         public void Awake()
         {
@@ -26,7 +29,9 @@ namespace DefaultNamespace
 
         public void Start()
         {
-            StartPosition = gameObject.transform;
+            StartPosition = transform.position;
+            StartRotation = transform.rotation;
+            coupsDebut = nbcoup;
         }
 
         private void OnTriggerEnter(Collider other)
@@ -54,11 +59,14 @@ namespace DefaultNamespace
                 }
 
                 //Destroy(this.gameObject);
-                gameObject.transform.position = StartPosition.position;
-                gameObject.transform.rotation = StartPosition.rotation;
-                
-                nbcoup = 3;
+                GetComponent<Rigidbody>().velocity = Vector3.zero;
+                GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
+                transform.position = StartPosition;
+                transform.rotation = StartRotation;
+                
+                nbcoup = coupsDebut;
+                isInPlanche = false;
             }
         }
 

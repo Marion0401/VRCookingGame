@@ -13,7 +13,7 @@ public class IngredientOnPlateau : MonoBehaviour
     public void ResetPlateau()
     {
         assemblieBurgerCollider.GetComponent<AssemblageBurger>().ResetBurger();
-        assemblieBurgerCollider.GetComponent<AssemblageBoissonFrie>().ResetBoissonFrie();
+        assemblieBoissonFrieCollider.GetComponent<AssemblageBoissonFrie>().ResetBoissonFrie();
         frieIngredient = EnumIngredient.None;
         sodaIngredient = EnumIngredient.None;
         burgerIngredient = new List<EnumIngredient>();

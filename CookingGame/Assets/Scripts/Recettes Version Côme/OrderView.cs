@@ -21,11 +21,32 @@ public class OrderView : MonoBehaviour
 
     public int numberOfItem = 0;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
         display = GetComponent<RecipeDisplay>();
         plateau = GetComponent<PlateauToOrder>();
+
+        if (display || plateau)
+        {
+
+            if (display) order = display.CurrentOrder;
+            else order = plateau.currentOrder;
+
+
+            hasDrink = order.hasDrink;
+            drink = order.drink;
+
+            hasFries = order.hasFries;
+            fries = order.fries;
+
+            main = order.main;
+            mainIngredientList = order.mainIngredientList;
+
+            numberOfItem = order.numberOfItem;
+        }
     }
 
     // Update is called once per frame

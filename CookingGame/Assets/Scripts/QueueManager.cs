@@ -14,6 +14,7 @@ public class QueueManager : MonoBehaviour
 
     public bool allClientsHaveBeenServed = false;
     [SerializeField] public int TotalNumberofClients = 30;
+    public int spawnedClient = 0;
     [SerializeField] int QueueCapacity = 5;
     public List<ClientQueuer> queue = new List<ClientQueuer>();
 
@@ -41,7 +42,7 @@ public class QueueManager : MonoBehaviour
 
     public void ClientExit(int index)
     {
-        if (index <= queue.Count && CounterOccupied[index - 1] != 0)
+        if ( CounterOccupied[index - 1] != 0)
         {
             ClientQueuer exiting = ClientAtSpot[index - 1].GetComponent<ClientQueuer>();
             if (exiting.atPlace)
@@ -64,7 +65,7 @@ public class QueueManager : MonoBehaviour
 
     public void SpawnClient()
     {
-        if (queue.Count <= QueueCapacity)
+        if (queue.Count <= QueueCapacity && spawnedClient <TotalNumberofClients )
         {
             //print(Checkpoints[Checkpoints.Count - 1].position.x.ToString() + " " + Checkpoints[Checkpoints.Count - 1].position.z.ToString());
             GameObject go = Instantiate(ClientPrefab, new Vector3(Checkpoints[0].position.x, 1, Checkpoints[0].position.z), Quaternion.identity);
@@ -76,6 +77,8 @@ public class QueueManager : MonoBehaviour
             cq.destination = Checkpoints[0].position;
             cq.destination.y = 1;
             //print(go.transform.position.x.ToString() + " " + go.transform.position.z.ToString());
+
+            spawnedClient++;
         }
     }
 
@@ -114,7 +117,7 @@ public class QueueManager : MonoBehaviour
             {
 
                 int a = Random.Range(1, 4);
-                print(a);
+                //print(a);
                 ClientExit(a);
 
 

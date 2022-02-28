@@ -6236,6 +6236,8 @@ MonoBehaviour:
   Screen: {fileID: 1436522768}
   Plateau: {fileID: 106549466}
   areTheSame: 0
+  DebugForceValidate: 0
+  manualTestValues: 0
 --- !u!114 &106549466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7536,7 +7538,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 444384159}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &444384162
 Camera:
   m_ObjectHideFlags: 0
@@ -7986,7 +7988,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 51cb0ba8181d5cc41b0fb4cd407135b7, type: 2}
+  - {fileID: 2100000, guid: 8c80a70b85519d44699f66a36d09d51a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8024,8 +8026,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475036869}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -6.907415, y: 3.9875298, z: -6.514859}
-  m_LocalScale: {x: 0.40000004, y: 10, z: 8}
+  m_LocalPosition: {x: -6.91, y: 3.9875298, z: -6.707}
+  m_LocalScale: {x: 1, y: 10, z: 8}
   m_Children: []
   m_Father: {fileID: 789064241}
   m_RootOrder: 2
@@ -8704,6 +8706,8 @@ MonoBehaviour:
   Screen: {fileID: 2024339934}
   Plateau: {fileID: 701935456}
   areTheSame: 0
+  DebugForceValidate: 0
+  manualTestValues: 0
 --- !u!114 &701935456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12396,6 +12400,7 @@ MonoBehaviour:
   - {fileID: 0}
   allClientsHaveBeenServed: 0
   TotalNumberofClients: 30
+  spawnedClient: 0
   QueueCapacity: 10
   queue: []
   autoSpawn: 1
@@ -13014,6 +13019,7 @@ MonoBehaviour:
   recipeDisplayed: 0
   positionFood: {fileID: 0}
   plusPrefab: {fileID: 6234570395521287303, guid: 356446584f1bfbe4484fa6426b73079a, type: 3}
+  GreenValidation: {fileID: 2392363144713374989, guid: f2631a75535c328429f135e6978541cb, type: 3}
   VerticalLayoutPrefab: {fileID: 6624032297783650793, guid: eb941263022c8434681cf912d0478238, type: 3}
   ScreenColor: {fileID: 529531336}
   listDrink:
@@ -13596,6 +13602,7 @@ MonoBehaviour:
   recipeDisplayed: 0
   positionFood: {fileID: 1197572963}
   plusPrefab: {fileID: 6234570395521287303, guid: 356446584f1bfbe4484fa6426b73079a, type: 3}
+  GreenValidation: {fileID: 2392363144713374989, guid: f2631a75535c328429f135e6978541cb, type: 3}
   VerticalLayoutPrefab: {fileID: 6624032297783650793, guid: eb941263022c8434681cf912d0478238, type: 3}
   ScreenColor: {fileID: 767540255}
   listDrink:
@@ -14755,7 +14762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4023578174255116, guid: f3e44870c7d004aa3a92cdfabc5207bc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.918
+      value: -7.773
       objectReference: {fileID: 0}
     - target: {fileID: 4023578174255116, guid: f3e44870c7d004aa3a92cdfabc5207bc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17150,6 +17157,7 @@ MonoBehaviour:
   recipeDisplayed: 0
   positionFood: {fileID: 0}
   plusPrefab: {fileID: 6234570395521287303, guid: 356446584f1bfbe4484fa6426b73079a, type: 3}
+  GreenValidation: {fileID: 2392363144713374989, guid: f2631a75535c328429f135e6978541cb, type: 3}
   VerticalLayoutPrefab: {fileID: 6624032297783650793, guid: eb941263022c8434681cf912d0478238, type: 3}
   ScreenColor: {fileID: 633789241}
   listDrink:
@@ -17459,6 +17467,8 @@ MonoBehaviour:
   Screen: {fileID: 1345855573}
   Plateau: {fileID: 2091832783}
   areTheSame: 0
+  DebugForceValidate: 0
+  manualTestValues: 0
 --- !u!114 &2091832783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17672,7 +17682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6873581241376795050, guid: 128368b493834904e816502b3470574c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.0160604
+      value: -2.088
       objectReference: {fileID: 0}
     - target: {fileID: 6873581241376795050, guid: 128368b493834904e816502b3470574c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17680,7 +17690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6873581241376795050, guid: 128368b493834904e816502b3470574c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.6192493
+      value: -2.605
       objectReference: {fileID: 0}
     - target: {fileID: 6873581241376795050, guid: 128368b493834904e816502b3470574c, type: 3}
       propertyPath: m_LocalRotation.w
