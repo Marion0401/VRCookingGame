@@ -17,7 +17,7 @@ public class AssemblageBurger : MonoBehaviour
     private void Start()
     {
         hasBeenGrapped = false;
-        totalLocalHauteurY = -1f;
+        totalLocalHauteurY = 0.04f;
         _ingredientLayer = LayerMask.NameToLayer("Ingredients");
         _assietteLayer = LayerMask.NameToLayer("Assiettes");
     }
@@ -137,7 +137,7 @@ public class AssemblageBurger : MonoBehaviour
 
         _listIngredientsGameObjects = new List<GameObject>();
         listIngredientsType = new List<EnumIngredient>();
-        totalLocalHauteurY = 1f;
+        totalLocalHauteurY = 0.04f;
         ancienneHauteurY = 0f;
         hasBeenGrapped = false;
     }
