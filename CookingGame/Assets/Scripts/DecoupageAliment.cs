@@ -65,18 +65,21 @@ namespace DefaultNamespace
                 }
 
                 //Destroy(this.gameObject);
-                GetComponent<Rigidbody>().velocity = Vector3.zero;
-                GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-
-                transform.position = StartPosition;
-                transform.rotation = StartRotation;
-                
-                nbcoup = coupsDebut;
-                isInPlanche = false;
+                ResetPostion();
             }
         }
 
-        
+        public void ResetPostion()
+        {
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+
+            transform.position = StartPosition;
+            transform.rotation = StartRotation;
+
+            nbcoup = coupsDebut;
+            isInPlanche = false;
+        }
 
     }
 }
