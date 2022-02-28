@@ -14,10 +14,12 @@ public class AssemblageBurger : MonoBehaviour
     private LayerMask _ingredientLayer;
     private LayerMask _assietteLayer;
     private bool hasBeenGrapped;
-    private void Start()
+    private Vector3 startColliderPos;
+    private void Awake()
     {
+        startColliderPos = transform.position;
         hasBeenGrapped = false;
-        totalLocalHauteurY = 0.04f;
+        totalLocalHauteurY = 0.04f;//1 car l'assiette sera le parent de tout or les enfant se réfère au scale du parent
         _ingredientLayer = LayerMask.NameToLayer("Ingredients");
         _assietteLayer = LayerMask.NameToLayer("Assiettes");
     }
@@ -135,9 +137,10 @@ public class AssemblageBurger : MonoBehaviour
             Destroy(_listIngredientsGameObjects[i]);
         }
 
+        transform.position = startColliderPos;
         _listIngredientsGameObjects = new List<GameObject>();
         listIngredientsType = new List<EnumIngredient>();
-        totalLocalHauteurY = 0.04f;
+        totalLocalHauteurY = 1f;
         ancienneHauteurY = 0f;
         hasBeenGrapped = false;
     }
