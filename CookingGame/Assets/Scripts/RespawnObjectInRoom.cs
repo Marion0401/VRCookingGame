@@ -17,7 +17,7 @@ public class RespawnObjectInRoom : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.GetComponent<DecoupageAliment>())
         {
