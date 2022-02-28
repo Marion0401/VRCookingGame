@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 5181306509780618209}
   - component: {fileID: 871033751191722921}
   - component: {fileID: 1523287216428672865}
-  m_Layer: 0
+  - component: {fileID: 7553170997973091135}
+  m_Layer: 6
   m_Name: cornet de frite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e436933c2b60f8f4e8e959594d8a1e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeOfIngredient: 5
+  typeOfIngredient: 0
 --- !u!54 &871033751191722921
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -183,6 +184,20 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
+--- !u!114 &7553170997973091135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96358715305809074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffea104f5c760a540885992189d563d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToSpawn: {fileID: 96358715305809074}
+  parent: {fileID: 0}
 --- !u!1 &696533552502502077
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +210,7 @@ GameObject:
   - component: {fileID: 5472946856520533251}
   - component: {fileID: 5401639479665243659}
   - component: {fileID: 5435006728207702160}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +305,7 @@ GameObject:
   - component: {fileID: 169359164327232116}
   - component: {fileID: 7885244116990690145}
   - component: {fileID: 2842404846175442412}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,7 +400,7 @@ GameObject:
   - component: {fileID: 2518728172545831480}
   - component: {fileID: 6429326203198022291}
   - component: {fileID: 7937373543832181648}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -480,7 +495,7 @@ GameObject:
   - component: {fileID: 3501771239010802692}
   - component: {fileID: 8496321120091500277}
   - component: {fileID: 3055734597865085545}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -576,7 +591,7 @@ GameObject:
   - component: {fileID: 3234170719064888949}
   - component: {fileID: 1410787079638807453}
   - component: {fileID: 4288966125386675773}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -671,9 +686,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 972cda04c89a19a4e8972f49fa710fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frite: {fileID: 2626688076357040334, guid: fcde3acf978ec454bb389374665c79ed, type: 3}
+  frite: {fileID: 5533462416343436740, guid: c4487152cb390544397b0390e6c21390, type: 3}
   parent: {fileID: 96358715305809074}
-  IngredientType: {fileID: 0}
+  IngredientType: {fileID: 5181306509780618209}
 --- !u!1 &8973909861917044272
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,7 +701,7 @@ GameObject:
   - component: {fileID: 5920653377971640778}
   - component: {fileID: 5731735431054009268}
   - component: {fileID: 7179928331018258432}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

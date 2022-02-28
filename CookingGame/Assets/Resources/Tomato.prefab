@@ -113,7 +113,7 @@ Transform:
   m_GameObject: {fileID: 992206041100841546}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.35, y: 0.3, z: 0.35}
+  m_LocalScale: {x: 0.2610195, y: 0.223731, z: 0.2610195}
   m_Children:
   - {fileID: 7183601139276173469}
   - {fileID: 2260089806364407874}
@@ -198,7 +198,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nbalimentdecoupe: 3
   decoupe: {fileID: 5902836497067062612, guid: 3592403a43379384eb37f830af67a1dd, type: 3}
-  MaindCollider: {fileID: 0}
+  MaindCollider1: {fileID: 1739542054, guid: 733c9f99aae6b2a4387b2583f86820e3, type: 3}
+  MaindCollider2: {fileID: 5711286272274793534, guid: 0c47ee25b7448c94ab6c801446054bd4, type: 3}
+  MaindCollider3: {fileID: 8017620697645427647, guid: 341b2d0015230b040a623cbf13a710de, type: 3}
   nbcoup: 3
   parent: {fileID: 0}
   isInPlanche: 0

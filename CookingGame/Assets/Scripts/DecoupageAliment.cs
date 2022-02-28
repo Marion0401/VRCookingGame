@@ -13,7 +13,9 @@ namespace DefaultNamespace
         //[SerializeField] private GameObject planche;
         public float nbalimentdecoupe;
         public GameObject decoupe;
-        public Collider MaindCollider;
+        public Collider MaindCollider1;
+        public Collider MaindCollider2;
+        public Collider MaindCollider3;
         public int nbcoup=3;
         public GameObject parent;
         public bool isInPlanche=false;
@@ -37,11 +39,15 @@ namespace DefaultNamespace
         private void OnTriggerEnter(Collider other)
         {
         
-            if (other == MaindCollider && isInPlanche)
+            if (other == MaindCollider1 || other == MaindCollider2 || other == MaindCollider3 )
             {
-                Debug.Log("coup dans la salade");
-                //sondecoupe.Play();
-                nbcoup--;
+                if (isInPlanche)
+                {
+                    //Debug.Log("coup dans la salade");
+                    //sondecoupe.Play();
+                    nbcoup--;
+                }
+                
             }
         }
 

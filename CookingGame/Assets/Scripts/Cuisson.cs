@@ -24,7 +24,7 @@ public class Cuisson : MonoBehaviour
 
         if (compteur > temps_cuisson)
         {
-            Debug.Log("poele2");
+            //Debug.Log("poele2");
             Instantiate(steak_cuit, transform.position, transform.rotation);
             Destroy(gameObject);
         }
@@ -33,10 +33,10 @@ public class Cuisson : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
+        //Debug.Log(other.name);
         if (other.name == "poele2")
         {
-            Debug.Log("enter");
+            //Debug.Log("enter");
             isInPoele = true;
         }
     }
@@ -47,7 +47,7 @@ public class Cuisson : MonoBehaviour
         Debug.Log(other.name);
         if (other.name == "poele2")
         {
-            Debug.Log("exit");
+            //Debug.Log("exit");
             isInPoele = false;
         }
     }

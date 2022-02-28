@@ -32,7 +32,7 @@ public class FriteCuisson : MonoBehaviour
 
         if (compteur > temps_cuisson)
         {
-            Debug.Log("Frite cuite");
+            
             gameObject.GetComponent<MeshRenderer>().material = MaterialCuit;
         }
     }
@@ -41,7 +41,7 @@ public class FriteCuisson : MonoBehaviour
     {
         if (other.GetComponent<Contenace>())
         {
-            Debug.Log("enter");
+            //Debug.Log("enter");
             isInPoele = true;
             //this.transform.parent = poele.transform;
         }
@@ -51,7 +51,7 @@ public class FriteCuisson : MonoBehaviour
     {
         if (other.GetComponent<Contenace>() )
         {
-            Debug.Log("exit");
+            //Debug.Log("exit");
             isInPoele = false;
             //transform.parent = null;
         }
