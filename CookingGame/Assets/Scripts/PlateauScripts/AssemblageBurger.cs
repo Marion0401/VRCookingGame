@@ -14,10 +14,10 @@ public class AssemblageBurger : MonoBehaviour
     private LayerMask _ingredientLayer;
     private LayerMask _assietteLayer;
     private bool hasBeenGrapped;
-    private void Awake()
+    private void Start()
     {
         hasBeenGrapped = false;
-        totalLocalHauteurY = 0.04f;//1 car l'assiette sera le parent de tout or les enfant se réfère au scale du parent
+        totalLocalHauteurY = -1f;
         _ingredientLayer = LayerMask.NameToLayer("Ingredients");
         _assietteLayer = LayerMask.NameToLayer("Assiettes");
     }

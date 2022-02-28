@@ -9,10 +9,11 @@ public class Cuisson : MonoBehaviour
     public float compteur = 0;
     public float temps_cuisson = 3;
     public GameObject steak_cuit;
+    private GameObject IngredientHolder;
 
     void Start()
     {
-        
+        IngredientHolder = GameObject.Find("Nourriture");
     }
 
     void Update()
@@ -25,10 +26,9 @@ public class Cuisson : MonoBehaviour
         if (compteur > temps_cuisson)
         {
             //Debug.Log("poele2");
-            Instantiate(steak_cuit, transform.position, transform.rotation);
+            Instantiate(steak_cuit, transform.position, transform.rotation, IngredientHolder.transform);
             Destroy(gameObject);
         }
-
     }
 
     private void OnTriggerEnter(Collider other)
