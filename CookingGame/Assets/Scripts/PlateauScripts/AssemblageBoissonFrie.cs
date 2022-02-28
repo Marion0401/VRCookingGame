@@ -91,7 +91,7 @@ public class AssemblageBoissonFrie : MonoBehaviour
         child.layer = _plateaulayer;//L'ingrédient devient une partie du plateau
         child.transform.localRotation = Quaternion.identity;
         child.transform.parent = transform;
-        child.transform.localPosition = new Vector3(_friePos.x, _friePos.z, _friePos.z);
+        child.transform.localPosition = new Vector3(_friePos.x, _friePos.y, _friePos.z);
         child.GetComponent<Rigidbody>().isKinematic = true;
         child.GetComponent<XRGrabInteractable>().enabled = false;
     }

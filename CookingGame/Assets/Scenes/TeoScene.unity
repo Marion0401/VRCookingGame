@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7456,9 +7456,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 173dc88e55d221b4c915f39f5e72c775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plateau: {fileID: 701935453}
+  _plateau: {fileID: 2091832780}
   _IngredientHolder: {fileID: 162905382}
-  _friePos: {x: 0.14, y: -0.4, z: -0.32}
+  _friePos: {x: -0.3, y: -0.5, z: 0.2}
   _sodaPos: {x: 0.39, y: -0.4, z: -0.32}
 --- !u!65 &366887427
 BoxCollider:
@@ -7915,7 +7915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _plateau: {fileID: 701935453}
   _IngredientHolder: {fileID: 162905382}
-  _friePos: {x: 0.14, y: -0.4, z: -0.32}
+  _friePos: {x: -0.3, y: -0.5, z: 0.2}
   _sodaPos: {x: 0.39, y: -0.4, z: -0.32}
 --- !u!65 &450001876
 BoxCollider:
@@ -10771,7 +10771,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 930745208}
   m_LocalRotation: {x: 0.7038909, y: -0, z: 4.656613e-10, w: -0.7103082}
-  m_LocalPosition: {x: -6.9745646, y: 0.86471796, z: -5.8567677}
+  m_LocalPosition: {x: -6.9745646, y: 0.906, z: -5.856}
   m_LocalScale: {x: 6.8500347, y: 6.850036, z: 6.8500357}
   m_Children:
   - {fileID: 138348888}
@@ -15791,6 +15791,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4288966125386675773, guid: f358fd5b52d96ea43a3ba57541ec736f, type: 3}
+      propertyPath: detachParent
+      value: 
+      objectReference: {fileID: 162905382}
     - target: {fileID: 7553170997973091135, guid: f358fd5b52d96ea43a3ba57541ec736f, type: 3}
       propertyPath: parent
       value: 
@@ -16226,9 +16230,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 173dc88e55d221b4c915f39f5e72c775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plateau: {fileID: 701935453}
+  _plateau: {fileID: 106549463}
   _IngredientHolder: {fileID: 162905382}
-  _friePos: {x: 0.14, y: -0.4, z: -0.32}
+  _friePos: {x: -0.3, y: -0.5, z: -0.1}
   _sodaPos: {x: 0.39, y: -0.4, z: -0.32}
 --- !u!65 &1547526143
 BoxCollider:
@@ -16678,7 +16682,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1611115246}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 10.872213, y: 10.600797, z: 14.878957}
@@ -19918,7 +19922,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2142707577}
   m_LocalRotation: {x: -0.7038909, y: -0, z: -4.656613e-10, w: -0.7103082}
-  m_LocalPosition: {x: 0.0029, y: 0.0052, z: 0.0075}
+  m_LocalPosition: {x: 0.0029, y: 0.0053, z: 0.0219}
   m_LocalScale: {x: 0.14598465, y: 0.14598459, z: 0.14598458}
   m_Children: []
   m_Father: {fileID: 930745209}
@@ -19988,6 +19992,10 @@ PrefabInstance:
     - target: {fileID: 675392939209278422, guid: f6106e7506e6f954aa7966c0abbbed7a, type: 3}
       propertyPath: m_Name
       value: 10187_LettuceBibb_v1-L2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 675392939209278422, guid: f6106e7506e6f954aa7966c0abbbed7a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6106e7506e6f954aa7966c0abbbed7a, type: 3}
