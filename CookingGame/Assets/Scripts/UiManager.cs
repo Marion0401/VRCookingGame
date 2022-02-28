@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
 {
@@ -10,19 +11,36 @@ public class UiManager : MonoBehaviour
     public GameObject BackButton;
     public GameObject Credits;
 
+    [Header("Toggle Settings)")]
+    public bool toggle_bool;
+    public GameObject toggle;
+
     void Start()
     {
         Startt.SetActive(true);
         Settings.SetActive(false);
         BackButton.SetActive(false);
         Credits.SetActive(false);
+
+        
+        toggle_bool = false;
+        OnToggleClicked();
     }
 
 
-    public void OnPlayClicked()
+    public void OnClickedPlay()
     {
-        Debug.Log("play");
-        SceneManager.LoadScene("environnement", LoadSceneMode.Single);
+        if (toggle_bool)
+        {
+            PlayerPrefs.SetString("position", "Sitting");
+
+        }
+        else
+        {
+            PlayerPrefs.SetString("position", "Upright");
+
+        }
+        SceneManager.LoadScene("TeoScene", LoadSceneMode.Single);
     }
 
     public void OnSettingsClicked()
@@ -48,4 +66,17 @@ public class UiManager : MonoBehaviour
         BackButton.SetActive(true);
     }
 
+
+    public void OnToggleClicked()
+    {
+        toggle_bool = !toggle_bool;
+        if (toggle_bool)
+        {
+            toggle.GetComponent<Text>().text = "Sitting";
+        }
+        else
+        {
+            toggle.GetComponent<Text>().text = "Upright";
+        }
+    }
 }
