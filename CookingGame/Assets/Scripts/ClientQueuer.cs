@@ -20,6 +20,8 @@ public class ClientQueuer : MonoBehaviour
     public float speed=1;
 
     [SerializeField] Vector3 directionToLookAt;
+    public bool isDone = false;
+    float deathCounter = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -71,97 +73,113 @@ public class ClientQueuer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponentInChildren<Animator>().SetFloat("MoveSpeed",0.5f);
-        possibleMove = (DistanceToNext() > 1.5f);
-        if (!possibleMove)
+        if(!isDone)
         {
-            GetComponentInChildren<Animator>().SetFloat("MoveSpeed",0f);
-        }
-        //print(DistanceToNext().ToString() + " " + orderInQueue.ToString());
-        //destination.y = transform.localScale.y / 2;
-        if (passedCheckpoints<manager.Checkpoints.Count - 3 && possibleMove)
-        {
-            Vector3 distToDest = (transform.position - destination);
-
-            if (distToDest.magnitude < 0.5 )
+            GetComponentInChildren<Animator>().SetFloat("MoveSpeed", 0.5f);
+            possibleMove = (DistanceToNext() > 1.5f);
+            if (!possibleMove)
             {
-                passedCheckpoints++;
-                destination = manager.Checkpoints[passedCheckpoints].position;
-                destination.y = 1;
+                GetComponentInChildren<Animator>().SetFloat("MoveSpeed", 0f);
             }
-            else
-            {
-                transform.LookAt(new Vector3(destination.x, 1, destination.z));
-                transform.position -= speed*(distToDest.normalized * Time.deltaTime);
-            }
-        }
-        else if (orderInQueue<=3 && passedCheckpoints >= manager.Checkpoints.Count - 3)
-        {
-            if(!selectedPlace && !atPlace)
-            {
-                GetComponentInChildren<Animator>().SetFloat("MoveSpeed",0f);
-                for (int i = 0; i < 3; i++)
-                {
-                    if (manager.CounterOccupied[i] == 0)
-                    {
-                        spot = i;
-                        manager.CounterOccupied[i] = 1;
-                        manager.ClientAtSpot[i] = this.gameObject;
-                        destination = manager.Checkpoints[manager.Checkpoints.Count-i-1].position;
-                        destination.y = 1;
-                        selectedPlace = true;
-                        break;
-                    }
-                }
-            }
-            else if (!atPlace)
+            //print(DistanceToNext().ToString() + " " + orderInQueue.ToString());
+            //destination.y = transform.localScale.y / 2;
+            if (passedCheckpoints < manager.Checkpoints.Count - 3 && possibleMove)
             {
                 Vector3 distToDest = (transform.position - destination);
 
-                transform.LookAt(new Vector3(destination.x, 1, destination.z));
-                transform.position -= speed * (distToDest.normalized *Time.deltaTime);
-
-                if (distToDest.magnitude < 0.5 && !atPlace)
+                if (distToDest.magnitude < 0.5)
                 {
-                    manager.Displays[spot].StartDIsplay();
-
-                    atPlace = true;
-                    transform.LookAt(transform.position + directionToLookAt);
-                    GetComponentInChildren<Animator>().SetFloat("MoveSpeed",0f);
-                }
-            }
-
-            if (atPlace)
-            {
-                GetComponentInChildren<Animator>().SetFloat("MoveSpeed",0f);
-            }
-
-
-
-            /*
-            if(manager.CounterOccupied[orderInQueue-1] == 0)
-            {
-                Vector3 distToDest = (transform.position - destination);
-
-                if (distToDest.magnitude < 0.5 && possibleMove)
-                {
-                    if(passedCheckpoints < manager.Checkpoints.Count-1)
                     passedCheckpoints++;
-
                     destination = manager.Checkpoints[passedCheckpoints].position;
                     destination.y = 1;
                 }
                 else
                 {
                     transform.LookAt(new Vector3(destination.x, 1, destination.z));
-                    transform.position -= (distToDest.normalized / 100);
+                    transform.position -= speed * (distToDest.normalized * Time.deltaTime);
                 }
             }
-            */
+            else if (orderInQueue <= 3 && passedCheckpoints >= manager.Checkpoints.Count - 3)
+            {
+                if (!selectedPlace && !atPlace)
+                {
+                    GetComponentInChildren<Animator>().SetFloat("MoveSpeed", 0f);
+                    for (int i = 0; i < 3; i++)
+                    {
+                        if (manager.CounterOccupied[i] == 0)
+                        {
+                            spot = i;
+                            manager.CounterOccupied[i] = 1;
+                            manager.ClientAtSpot[i] = this.gameObject;
+                            destination = manager.Checkpoints[manager.Checkpoints.Count - i - 1].position;
+                            destination.y = 1;
+                            selectedPlace = true;
+                            break;
+                        }
+                    }
+                }
+                else if (!atPlace)
+                {
+                    Vector3 distToDest = (transform.position - destination);
+
+                    transform.LookAt(new Vector3(destination.x, 1, destination.z));
+                    transform.position -= speed * (distToDest.normalized * Time.deltaTime);
+
+                    if (distToDest.magnitude < 0.5 && !atPlace)
+                    {
+                        manager.Displays[spot].StartDIsplay();
+
+                        atPlace = true;
+                        transform.LookAt(transform.position + directionToLookAt);
+                        GetComponentInChildren<Animator>().SetFloat("MoveSpeed", 0f);
+                    }
+                }
+
+                if (atPlace)
+                {
+                    GetComponentInChildren<Animator>().SetFloat("MoveSpeed", 0f);
+                }
+
+
+
+                /*
+                if(manager.CounterOccupied[orderInQueue-1] == 0)
+                {
+                    Vector3 distToDest = (transform.position - destination);
+
+                    if (distToDest.magnitude < 0.5 && possibleMove)
+                    {
+                        if(passedCheckpoints < manager.Checkpoints.Count-1)
+                        passedCheckpoints++;
+
+                        destination = manager.Checkpoints[passedCheckpoints].position;
+                        destination.y = 1;
+                    }
+                    else
+                    {
+                        transform.LookAt(new Vector3(destination.x, 1, destination.z));
+                        transform.position -= (distToDest.normalized / 100);
+                    }
+                }
+                */
+            }
+            else
+            {
+                GetComponentInChildren<Animator>().SetFloat("MoveSpeed", 0f);
+            }
         }
         else
         {
-            GetComponentInChildren<Animator>().SetFloat("MoveSpeed",0f);
+            transform.Rotate(Vector3.up, 5, Space.World);
+            transform.localScale *= 0.98f;
+            deathCounter += Time.deltaTime;
+
+            if (deathCounter >= 0.5f)
+            {
+                Instantiate(ParticlesInventory.instance.starSuccess, transform.position, Quaternion.Euler(-90, 0, 0));
+                Destroy(this.gameObject);
+            }
         }
+        
     }
 }

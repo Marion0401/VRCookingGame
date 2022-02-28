@@ -49,6 +49,8 @@ namespace DefaultNamespace
                                                 : ((typeAliment == Aliments.SALADE)? 
                                                         ParticlesInventory.instance.saladLeaves 
                                                         : ParticlesInventory.instance.breadCrumbs);
+                    particle = Instantiate(particle, transform.position, Quaternion.Euler(-90, 0, 0));
+                    //particle.transform.SetParent(this.transform);
                     //Debug.Log("coup dans la salade");
                     //sondecoupe.Play();
                     nbcoup--;

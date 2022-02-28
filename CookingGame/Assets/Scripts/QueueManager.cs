@@ -55,11 +55,11 @@ public class QueueManager : MonoBehaviour
                 CounterOccupied[exiting.spot] = 0;
                 ClientAtSpot[exiting.spot] = null;
 
-                Instantiate(ParticlesInventory.instance.starSuccess, exiting.transform.position, Quaternion.identity);
+                //Instantiate(ParticlesInventory.instance.starSuccess, exiting.transform.position, Quaternion.identity);
                 Displays[exiting.spot].ExitDisplay();
 
-
-                Destroy(exiting.gameObject);
+                exiting.isDone = true;
+                //Destroy(exiting.gameObject);
             }
         }
     }
