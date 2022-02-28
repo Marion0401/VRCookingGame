@@ -14,6 +14,7 @@ public class AssemblageBoissonFrie : MonoBehaviour
     private GameObject frie = null;
     private GameObject soda = null;
     private bool sodaHasBeenGrab = false;
+    private bool frieHasBeenGrab = false;
     private LayerMask _ingredientLayer;
     private LayerMask _plateaulayer;
     private void Awake()
@@ -24,20 +25,36 @@ public class AssemblageBoissonFrie : MonoBehaviour
 
     private void Update()
     {
-        if (soda!=null)
+        if (soda != null)
         {
+
+            // Partie de programme qui permet à l'utilisateur de pouvoir grab le soda
             Transform sodaTransform = soda.transform.parent;
             if (sodaTransform == null)
             {
                 sodaHasBeenGrab = true;
             }
 
-            if (sodaTransform != null & sodaHasBeenGrab )
+            if (sodaTransform != null & sodaHasBeenGrab)
             {
+                //Si l'utilisateur à grab et lacher l'objet, on le remove du plateau
                 RemoveSodaFromPlateau();
                 sodaHasBeenGrab = false;
             }
-            
+
+            // Partie de programme qui permet à l'utilisateur de pouvoir grab les frites
+            Transform frieTransform = frie.transform.parent;
+            if (frieTransform == null)
+            {
+                frieHasBeenGrab = true;
+            }
+            if (frieTransform != null & frieHasBeenGrab)
+            {
+                //Si l'utilisateur à grab et lacher l'objet, on le remove du plateau
+                RemoveFrieFromPlateau();
+                frieHasBeenGrab = false;
+            }
+
         }
     }
 
@@ -46,54 +63,52 @@ public class AssemblageBoissonFrie : MonoBehaviour
         //Quand on détecte qu'un objet rentre dans dans la zone de collision 
         //On vérifie qu'il appartient a IngredientHolder ( donc qu'il n'ai plus attraper par le joueur )
         GameObject otherGameObject = other.gameObject;
-        Debug.Log("colision");
-        Debug.Log(otherGameObject.transform.parent.name);
-        Debug.Log(_IngredientHolder.transform.name);
-
-        if (otherGameObject.transform.parent.name != null && otherGameObject.transform.parent.name == _IngredientHolder.transform.name)
+        if (otherGameObject.transform.parent.name == _IngredientHolder.transform.name)
         {
-            //On vérifie que c'est un ingrédient
+            //On vérifie que c'est les ingrédients
             if (otherGameObject.layer == _ingredientLayer)
             {
                 EnumIngredient typeOfIngredient = other.GetComponent<IngredientType>().typeOfIngredient;
-                if (typeOfIngredient == EnumIngredient.Frites & frie==null)
+                if (typeOfIngredient == EnumIngredient.Frites & frie == null)
                 {
                     _plateau.GetComponent<IngredientOnPlateau>().frieIngredient = typeOfIngredient;
                     frie = otherGameObject;
                     JoinFrie(otherGameObject);
-                    Debug.Log("frite detecter");
                 }
 
-                if (typeOfIngredient == EnumIngredient.Coca & soda==null)
+                if (typeOfIngredient == EnumIngredient.Coca & soda == null)
                 {
                     _plateau.GetComponent<IngredientOnPlateau>().sodaIngredient = typeOfIngredient;
                     soda = otherGameObject;
                     JoinSoda(otherGameObject);
                 }
+
+
                 _plateau.GetComponent<PlateauToOrder>().UpdateOrder();
             }
         }
-            
+
     }
 
     private void JoinSoda(GameObject child)
     {
+        //Fonction qui permet de placer le soda à la bonne position du plateau
         child.layer = _plateaulayer;//L'ingrédient devient une partie du plateau
         child.transform.localRotation = Quaternion.identity;
         child.transform.parent = transform;
-        child.transform.localPosition = new Vector3(_sodaPos.x,_sodaPos.y,_sodaPos.z);
+        child.transform.localPosition = new Vector3(_sodaPos.x, _sodaPos.y, _sodaPos.z);
         child.GetComponent<Rigidbody>().isKinematic = true;
-        
+
     }
 
     private void JoinFrie(GameObject child)
     {
+        //Fonction qui permet de placer les frites à la bonne position du plateau
         child.layer = _plateaulayer;//L'ingrédient devient une partie du plateau
         child.transform.localRotation = Quaternion.identity;
         child.transform.parent = transform;
         child.transform.localPosition = new Vector3(_friePos.x, _friePos.y, _friePos.z);
         child.GetComponent<Rigidbody>().isKinematic = true;
-        child.GetComponent<XRGrabInteractable>().enabled = false;
     }
 
     private void RemoveSodaFromPlateau()
@@ -102,6 +117,14 @@ public class AssemblageBoissonFrie : MonoBehaviour
         soda.transform.parent = _IngredientHolder.transform;
         soda.layer = _ingredientLayer;
         soda = null;
+    }
+
+    private void RemoveFrieFromPlateau()
+    {
+        frie.GetComponent<Rigidbody>().isKinematic = false;
+        frie.transform.parent = _IngredientHolder.transform;
+        frie.layer = _ingredientLayer;
+        frie = null;
     }
 
     public void ResetBoissonFrie()

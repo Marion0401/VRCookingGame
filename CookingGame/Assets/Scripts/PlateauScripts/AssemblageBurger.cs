@@ -36,16 +36,21 @@ public class AssemblageBurger : MonoBehaviour
                 //On vérifie que c'est un ingrédient
                 if (otherGameObject.layer == _ingredientLayer)
                 {
+                    EnumIngredient typeOfIngredient = otherGameObject.GetComponent<IngredientType>().typeOfIngredient;
+                    if (typeOfIngredient != EnumIngredient.Coca && typeOfIngredient != EnumIngredient.Frites)
+                    {
+                        //On le met en enfant de l'assiette
+                        Join(otherGameObject, _assiette);
+                        //On ajoute le gameObject a la list
+                        _listIngredientsGameObjects.Add(otherGameObject);
+                        listIngredientsType.Add(typeOfIngredient);
+                        _plateau.GetComponent<IngredientOnPlateau>().burgerIngredient = listIngredientsType;
 
-                    //On définie sa nouvelle position
-                    NewAssemblerMakerPosition(otherGameObject.transform.localScale.y);
-                    //On le met en enfant de l'assiette
-                    Join(otherGameObject, _assiette);
-                    //On ajoute le gameObject a la list
-                    _listIngredientsGameObjects.Add(otherGameObject);
-                    listIngredientsType.Add(other.GetComponent<IngredientType>().typeOfIngredient);
-                    _plateau.GetComponent<IngredientOnPlateau>().burgerIngredient = listIngredientsType;
-                    _plateau.GetComponent<PlateauToOrder>().UpdateOrder();
+                        //On définie sa nouvelle position
+                        NewAssemblerMakerPosition();
+
+                        _plateau.GetComponent<PlateauToOrder>().UpdateOrder();
+                    }
                 }
             }
         }
@@ -79,12 +84,24 @@ public class AssemblageBurger : MonoBehaviour
     {
         int nbOfIngredientInList = _listIngredientsGameObjects.Count;
         child.layer = _assietteLayer;//L'ingrédient devient une partie de l'assiette
-        child.transform.localRotation = Quaternion.identity;
-        child.transform.parent = parent.transform;
-        totalLocalHauteurY += child.transform.localScale.y / 2f + ancienneHauteurY;
-        ancienneHauteurY = child.transform.localScale.y / 2f;
-        child.GetComponent<Rigidbody>().isKinematic = true;
-        child.transform.localPosition = new Vector3(0f, totalLocalHauteurY, 0f);
+        if (child.GetComponent<IngredientType>().typeOfIngredient == EnumIngredient.Salade)
+        {
+            child.transform.localRotation = Quaternion.Euler(90f, 0, 0);
+            child.transform.parent = parent.transform;
+            totalLocalHauteurY += 0.01f / 2f + ancienneHauteurY;
+            ancienneHauteurY = 0.01f;
+            child.GetComponent<Rigidbody>().isKinematic = true;
+            child.transform.localPosition = new Vector3(0f, totalLocalHauteurY, 0f);
+        }
+        else
+        {
+            child.transform.localRotation = Quaternion.identity;
+            child.transform.parent = parent.transform;
+            totalLocalHauteurY += child.transform.localScale.y / 2f + ancienneHauteurY;
+            ancienneHauteurY = child.transform.localScale.y / 2f;
+            child.GetComponent<Rigidbody>().isKinematic = true;
+            child.transform.localPosition = new Vector3(0f, totalLocalHauteurY, 0f);
+        }
 
         if (nbOfIngredientInList != 0)
         {
@@ -93,9 +110,9 @@ public class AssemblageBurger : MonoBehaviour
 
     }
 
-    private void NewAssemblerMakerPosition(float yMovement)
+    private void NewAssemblerMakerPosition()
     {
-        transform.position += new Vector3(0, yMovement / 5f, 0);
+        transform.position = _listIngredientsGameObjects[_listIngredientsGameObjects.Count - 1].transform.position;
     }
 
     public void LastIngredientGrapped(GameObject ingredient)
@@ -116,7 +133,7 @@ public class AssemblageBurger : MonoBehaviour
         //On reset la position de la hitbox
         totalLocalHauteurY -= ingredientTransformLocalScaleY / 2f + ancienneHauteurY;
         ancienneHauteurY = ingredientTransformLocalScaleY / 2f;
-        NewAssemblerMakerPosition(-ingredientTransformLocalScaleY / 2f);
+        NewAssemblerMakerPosition();
 
         //On fait en sorte que le nouveau dernier ingredient est grappable par l'utilisateur
         if (_listIngredientsGameObjects.Count != 0)
@@ -140,7 +157,7 @@ public class AssemblageBurger : MonoBehaviour
         transform.position = startColliderPos;
         _listIngredientsGameObjects = new List<GameObject>();
         listIngredientsType = new List<EnumIngredient>();
-        totalLocalHauteurY = 1f;
+        totalLocalHauteurY = 0.04f;
         ancienneHauteurY = 0f;
         hasBeenGrapped = false;
     }
