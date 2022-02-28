@@ -17,11 +17,27 @@ public class RespawnObjectInRoom : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<DecoupageAliment>())
+        {
+            other.GetComponent<DecoupageAliment>().ResetPostion();
+        }
+        if (other.GetComponent<Contenace>())
+        {
+            other.GetComponent<Contenace>().ResetPostion();
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.GetComponent<DecoupageAliment>())
         {
             other.GetComponent<DecoupageAliment>().ResetPostion();
+        }
+        if (other.GetComponent<Contenace>())
+        {
+            other.GetComponent<Contenace>().ResetPostion();
         }
     }
 }

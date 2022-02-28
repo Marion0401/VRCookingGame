@@ -7,9 +7,13 @@ public class Contenace : MonoBehaviour
     public int frites_contenu = 0;
     public int steak_contenu = 0;
 
+    Vector3 StartPosition;
+    Quaternion StartRotation;
+
     void Start()
     {
-        
+        StartPosition = transform.position;
+        StartRotation = transform.rotation;
     }
 
     void Update()
@@ -32,5 +36,14 @@ public class Contenace : MonoBehaviour
         {
             frites_contenu = frites_contenu - 1;
         }
+    }
+
+    public void ResetPostion()
+    {
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+
+        transform.position = StartPosition;
+        transform.rotation = StartRotation;
     }
 }
