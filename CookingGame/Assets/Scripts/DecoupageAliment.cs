@@ -19,6 +19,7 @@ namespace DefaultNamespace
         public int nbcoup=3;
         public GameObject parent;
         public bool isInPlanche=false;
+        public Aliments typeAliment;
 
         private Vector3 StartPosition;
         private Quaternion StartRotation;
@@ -43,6 +44,11 @@ namespace DefaultNamespace
             {
                 if (isInPlanche)
                 {
+                    ParticleSystem particle = (typeAliment == Aliments.TOMATE) ? 
+                                                ParticlesInventory.instance.tomatoJuice 
+                                                : ((typeAliment == Aliments.SALADE)? 
+                                                        ParticlesInventory.instance.saladLeaves 
+                                                        : ParticlesInventory.instance.breadCrumbs);
                     //Debug.Log("coup dans la salade");
                     //sondecoupe.Play();
                     nbcoup--;

@@ -45,6 +45,7 @@ namespace DefaultNamespace
                     aaa.decoupe = decoupe;
                     aaa.nbalimentdecoupe = cutalimnb;
                     aaa.nbcoup = nbcoup;
+                    aaa.typeAliment = aliment;
                     //rb.useGravity = false;
                     break;
                 }
@@ -60,6 +61,7 @@ namespace DefaultNamespace
                     aaa.MaindCollider3 = MaindCollider3;
                     aaa.decoupe = decoupe;
                     aaa.nbalimentdecoupe = cutalimnb;
+                    aaa.typeAliment = aliment;
                     //rb.useGravity = false;
                     break;
                 }
@@ -76,6 +78,7 @@ namespace DefaultNamespace
                     aaa.MaindCollider3 = MaindCollider3;
                     aaa.decoupe = decoupe;
                     aaa.nbalimentdecoupe = cutalimnb;
+                    aaa.typeAliment = aliment;
                     //rb.useGravity = false;
                     break;
                 }

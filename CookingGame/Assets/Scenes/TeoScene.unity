@@ -13473,6 +13473,7 @@ GameObject:
   - component: {fileID: 1247438575}
   - component: {fileID: 1247438574}
   - component: {fileID: 1247438573}
+  - component: {fileID: 1247438579}
   m_Layer: 0
   m_Name: Queue Manager
   m_TagString: Untagged
@@ -13614,6 +13615,22 @@ Transform:
   m_Father: {fileID: 1983477224}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1247438579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247438572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c61a3d85ca0b74fb73879841107278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tomatoJuice: {fileID: 4616412176199138512, guid: 4f282f7a858f4584d95f976d9e79ebc5, type: 3}
+  breadCrumbs: {fileID: 700562235513073037, guid: 7309fce83dbfda540ad4d00a89c6a6f8, type: 3}
+  saladLeaves: {fileID: 7394091062315947170, guid: 17c18c59d621a974ab23252d1457c2ab, type: 3}
+  starSuccess: {fileID: 49374930029267381, guid: a111027d360e8ce4ab2923acad845702, type: 3}
 --- !u!1 &1259046301
 GameObject:
   m_ObjectHideFlags: 0
