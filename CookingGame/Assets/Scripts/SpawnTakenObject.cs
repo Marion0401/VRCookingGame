@@ -10,6 +10,7 @@ public class SpawnTakenObject : MonoBehaviour
     private Vector3 place;
     public Transform parent;
     private bool hasbeengrabed = false;
+    private bool hasbeengrabedOneTime = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,11 +39,13 @@ public class SpawnTakenObject : MonoBehaviour
         {
             hasbeengrabed = true;
         }
+       
 
-        if (hasbeengrabed && gameObject.transform.parent!=null)
+        if (hasbeengrabed && gameObject.transform.parent!=null && !hasbeengrabedOneTime)
         {
             gameObject.GetComponent<Rigidbody>().isKinematic = false;
             gameObject.GetComponent<Rigidbody>().useGravity = true;
+            hasbeengrabedOneTime = true;
         }
 
     }

@@ -8,6 +8,7 @@ public class detection_frite : MonoBehaviour
     [SerializeField] private GameObject frite;
     private int frites_contenu = 0;
     [SerializeField] private GameObject parent;
+    [SerializeField] private GameObject detachParent;
     [SerializeField] private IngredientType IngredientType;
     public void OnTriggerEnter(Collider other)
     {
@@ -15,6 +16,7 @@ public class detection_frite : MonoBehaviour
         if (other.tag == frite.tag)
         {
             frites_contenu += 1;
+            Debug.Log(frites_contenu);
             other.transform.SetParent(parent.transform);
             VerifNbFrite();
         }
@@ -25,7 +27,8 @@ public class detection_frite : MonoBehaviour
         if (other.tag == frite.tag)
         {
             frites_contenu -= 1;
-            other.transform.DetachChildren();
+            Debug.Log(frites_contenu);
+            other.transform.SetParent(detachParent.transform);
             VerifNbFrite();
         }
     }

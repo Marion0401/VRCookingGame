@@ -46,7 +46,11 @@ public class AssemblageBoissonFrie : MonoBehaviour
         //Quand on détecte qu'un objet rentre dans dans la zone de collision 
         //On vérifie qu'il appartient a IngredientHolder ( donc qu'il n'ai plus attraper par le joueur )
         GameObject otherGameObject = other.gameObject;
-        if (otherGameObject.transform.parent.name == _IngredientHolder.transform.name)
+        Debug.Log("colision");
+        Debug.Log(otherGameObject.transform.parent.name);
+        Debug.Log(_IngredientHolder.transform.name);
+
+        if (otherGameObject.transform.parent.name != null && otherGameObject.transform.parent.name == _IngredientHolder.transform.name)
         {
             //On vérifie que c'est un ingrédient
             if (otherGameObject.layer == _ingredientLayer)
@@ -57,6 +61,7 @@ public class AssemblageBoissonFrie : MonoBehaviour
                     _plateau.GetComponent<IngredientOnPlateau>().frieIngredient = typeOfIngredient;
                     frie = otherGameObject;
                     JoinFrie(otherGameObject);
+                    Debug.Log("frite detecter");
                 }
 
                 if (typeOfIngredient == EnumIngredient.Coca & soda==null)
@@ -86,7 +91,7 @@ public class AssemblageBoissonFrie : MonoBehaviour
         child.layer = _plateaulayer;//L'ingrédient devient une partie du plateau
         child.transform.localRotation = Quaternion.identity;
         child.transform.parent = transform;
-        child.transform.localPosition = new Vector3(_friePos.x,child.transform.localScale.y/2f-0.6f,_friePos.z);
+        child.transform.localPosition = new Vector3(_friePos.x, _friePos.z, _friePos.z);
         child.GetComponent<Rigidbody>().isKinematic = true;
         child.GetComponent<XRGrabInteractable>().enabled = false;
     }

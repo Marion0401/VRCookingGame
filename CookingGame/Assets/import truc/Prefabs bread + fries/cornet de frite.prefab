@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 871033751191722921}
   - component: {fileID: 1523287216428672865}
   - component: {fileID: 7553170997973091135}
+  - component: {fileID: 8318503690030156324}
   m_Layer: 6
   m_Name: cornet de frite
   m_TagString: Untagged
@@ -199,6 +200,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 96358715305809074}
   parent: {fileID: 0}
+--- !u!65 &8318503690030156324
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96358715305809074}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.041513, y: 1.7903644, z: 1}
+  m_Center: {x: -0.00455942, y: 0.8424738, z: 0}
 --- !u!1 &470523572370385960
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,6 +733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frite: {fileID: 5533462416343436740, guid: c4487152cb390544397b0390e6c21390, type: 3}
   parent: {fileID: 96358715305809074}
+  detachParent: {fileID: 0}
   IngredientType: {fileID: 5181306509780618209}
 --- !u!1 &8973909861917044272
 GameObject:
