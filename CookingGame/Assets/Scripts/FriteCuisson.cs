@@ -12,6 +12,8 @@ public class FriteCuisson : MonoBehaviour
     public bool isInPoele = false;
     public GameObject poele;
 
+    
+    public Transform poelePos;
 
     void Start()
     {
@@ -28,6 +30,8 @@ public class FriteCuisson : MonoBehaviour
         if (isInPoele)
         {
             compteur = compteur + Time.deltaTime;
+            
+            Instantiate(ParticlesInventory.instance.fryingBubbles, poelePos.transform.position, Quaternion.Euler(-90, 0, 0));
         }
 
         if (compteur > temps_cuisson)
@@ -41,9 +45,16 @@ public class FriteCuisson : MonoBehaviour
     {
         if (other.GetComponent<Contenace>())
         {
-            //Debug.Log("enter");
-            isInPoele = true;
-            //this.transform.parent = poele.transform;
+            if(other.GetComponent<Contenace>().cookType == Ingredient.Fries)
+            {
+                //Debug.Log("enter");
+                isInPoele = true;
+                poelePos = other.transform;
+                transform.parent = poelePos.transform;
+
+                
+            }
+            
         }
     }
 
@@ -51,9 +62,13 @@ public class FriteCuisson : MonoBehaviour
     {
         if (other.GetComponent<Contenace>() )
         {
-            //Debug.Log("exit");
-            isInPoele = false;
-            //transform.parent = null;
+            if (other.GetComponent<Contenace>().cookType == Ingredient.Fries)
+            {
+                //Debug.Log("exit");
+                isInPoele = false;
+                transform.parent = other.GetComponent<Contenace>().NourritureParent;
+                poelePos = null;
+            }
         }
     }
 

@@ -7,8 +7,11 @@ public class Contenace : MonoBehaviour
     public int frites_contenu = 0;
     public int steak_contenu = 0;
 
+    public Ingredient cookType = Ingredient.None;
+
     Vector3 StartPosition;
     Quaternion StartRotation;
+    public Transform NourritureParent;
 
     void Start()
     {
@@ -24,17 +27,25 @@ public class Contenace : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.name == "frite(Clone)")
+        if (other.GetComponent<FriteCuisson>())
         {
-            frites_contenu = frites_contenu + 1;
+            frites_contenu++;
+        }
+        else if (other.GetComponent<Cuisson>())
+        {
+            steak_contenu++;
         }
     }
 
     public void OnTriggerExit(Collider other)
     {
-        if (other.name == "frite(Clone)")
+        if (other.GetComponent<FriteCuisson>())
         {
-            frites_contenu = frites_contenu - 1;
+            frites_contenu--;
+        }
+        else if (other.GetComponent<Cuisson>())
+        {
+            steak_contenu--;
         }
     }
 

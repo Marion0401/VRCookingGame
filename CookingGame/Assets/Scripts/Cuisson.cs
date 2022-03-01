@@ -21,6 +21,7 @@ public class Cuisson : MonoBehaviour
         if (isInPoele)
         {
             compteur = compteur + Time.deltaTime;
+            Instantiate(ParticlesInventory.instance.fryingBubbles, poele.transform.position, Quaternion.Euler(-90, 0, 0));
         }
 
         if (compteur > temps_cuisson)
@@ -33,22 +34,26 @@ public class Cuisson : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log(other.name);
-        if (other.name == "poele2")
+        if (other.GetComponent<Contenace>())
         {
-            //Debug.Log("enter");
-            isInPoele = true;
+            if (other.GetComponent<Contenace>().cookType == Ingredient.Steak)
+            {
+                //Debug.Log("enter");
+                isInPoele = true;
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
 
-        Debug.Log(other.name);
-        if (other.name == "poele2")
+        if (other.GetComponent<Contenace>())
         {
-            //Debug.Log("exit");
-            isInPoele = false;
+            if (other.GetComponent<Contenace>().cookType == Ingredient.Steak)
+            {
+                //Debug.Log("exit");
+                isInPoele = false;
+            }
         }
     }
 

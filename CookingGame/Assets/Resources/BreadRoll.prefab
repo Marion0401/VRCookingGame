@@ -214,7 +214,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &1064918327535620284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,6 +350,7 @@ MonoBehaviour:
   nbcoup: 3
   parent: {fileID: 0}
   isInPlanche: 0
+  typeAliment: 2
 --- !u!65 &1552868984623839433
 BoxCollider:
   m_ObjectHideFlags: 0

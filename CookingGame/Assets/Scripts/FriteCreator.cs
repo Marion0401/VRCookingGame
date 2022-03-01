@@ -24,14 +24,16 @@ public class FriteCreator : MonoBehaviour
 
     public void Spawner()
     {
-        if (compteur> time_spawn && Contenace.frites_contenu< max_frites_dans_saladier)
+
+
+        if (compteur> time_spawn && Contenace.frites_contenu< max_frites_dans_saladier && Vector3.Dot(Contenace.transform.forward, Vector3.up) >= 0.45f)
         {
             compteur = 0;
             for (int i = 0; i < nb_frite_par_spawn; i++)
             {
-                frite_clone = Instantiate(frite, transform.position, transform.rotation * Quaternion.Euler(-59, 28, 0f));
-                frite_clone.transform.SetParent(poele.transform, false);
-                frite_clone.transform.localScale = new Vector3((float)(0.15201 / 30), (float)(0.15201 / 30), (float)(0.374687 / 16));
+                frite_clone = Instantiate(frite, transform.position + Random.Range(-0.05f, 0.05f)*Vector3.up, transform.rotation * Quaternion.Euler(-59, 28, 0f));
+                //frite_clone.transform.SetParent(poele.transform, false);
+                //frite_clone.transform.localScale = new Vector3((float)(0.15201 / 30), (float)(0.15201 / 30), (float)(0.374687 / 16));
                 frite_clone.transform.position = gameObject.transform.position;
             }
         }
