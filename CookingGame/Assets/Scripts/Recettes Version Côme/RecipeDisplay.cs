@@ -223,7 +223,8 @@ public enum Ingredient
     HotDogBread,
     Sausage,
     Fries,
-    Drink
+    Drink,
+    FriesBox
 }
 
 public enum MainCourse

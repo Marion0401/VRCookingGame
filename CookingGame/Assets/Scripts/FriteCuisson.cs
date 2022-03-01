@@ -45,16 +45,16 @@ public class FriteCuisson : MonoBehaviour
     {
         if (other.GetComponent<Contenace>())
         {
-            if(other.GetComponent<Contenace>().cookType == Ingredient.Fries)
+            if(other.GetComponent<Contenace>().cookType == Ingredient.Fries || other.GetComponent<Contenace>().cookType == Ingredient.FriesBox)
             {
                 //Debug.Log("enter");
-                isInPoele = true;
+                if (other.GetComponent<Contenace>().cookType == Ingredient.Fries) isInPoele = true;
                 poelePos = other.transform;
                 transform.parent = poelePos.transform;
 
                 
             }
-            
+
         }
     }
 
@@ -62,10 +62,10 @@ public class FriteCuisson : MonoBehaviour
     {
         if (other.GetComponent<Contenace>() )
         {
-            if (other.GetComponent<Contenace>().cookType == Ingredient.Fries)
+            if (other.GetComponent<Contenace>().cookType == Ingredient.Fries || other.GetComponent<Contenace>().cookType == Ingredient.FriesBox)
             {
                 //Debug.Log("exit");
-                isInPoele = false;
+                if (other.GetComponent<Contenace>().cookType == Ingredient.Fries) isInPoele = false;
                 transform.parent = other.GetComponent<Contenace>().NourritureParent;
                 poelePos = null;
             }

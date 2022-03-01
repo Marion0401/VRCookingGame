@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1523287216428672865}
   - component: {fileID: 7553170997973091135}
   - component: {fileID: 8318503690030156324}
+  - component: {fileID: 95909233013928367}
   m_Layer: 6
   m_Name: cornet de frite
   m_TagString: Untagged
@@ -213,6 +214,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.041513, y: 1.7903644, z: 1}
   m_Center: {x: -0.00455942, y: 0.8424738, z: 0}
+--- !u!114 &95909233013928367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96358715305809074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99169ca9fa6d0b14484946eba0179b55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frites_contenu: 0
+  steak_contenu: 0
+  cookType: 11
+  NourritureParent: {fileID: 0}
 --- !u!1 &470523572370385960
 GameObject:
   m_ObjectHideFlags: 0
