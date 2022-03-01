@@ -13,7 +13,7 @@ public class QueueManager : MonoBehaviour
 
 
     public bool allClientsHaveBeenServed = false;
-    [SerializeField] public int TotalNumberofClients = 30;
+    public int TotalNumberofClients = 30;
     public int spawnedClient = 0;
     [SerializeField] int QueueCapacity = 5;
     public List<ClientQueuer> queue = new List<ClientQueuer>();
@@ -38,6 +38,8 @@ public class QueueManager : MonoBehaviour
         {
             Displays[rd.displayNumber] = rd;
         }
+
+        TotalNumberofClients = PlayerPrefs.GetInt("ClientNumber");
     }
 
     public void ClientExit(int index)

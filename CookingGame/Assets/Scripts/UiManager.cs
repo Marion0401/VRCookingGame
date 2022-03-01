@@ -10,10 +10,13 @@ public class UiManager : MonoBehaviour
     public GameObject Settings;
     public GameObject BackButton;
     public GameObject Credits;
+    public Text ClientNumber;
 
     [Header("Toggle Settings)")]
     public bool toggle_bool;
     public GameObject toggle;
+
+    int clientNumberChoice = 10;
 
     void Start()
     {
@@ -21,15 +24,22 @@ public class UiManager : MonoBehaviour
         Settings.SetActive(false);
         BackButton.SetActive(false);
         Credits.SetActive(false);
-
+        ClientNumber.text = clientNumberChoice.ToString();
         
         toggle_bool = false;
         OnToggleClicked();
     }
 
+    public void ClientNumberChange(int amount)
+    {
+        clientNumberChoice += amount;
+        clientNumberChoice = Mathf.Clamp(clientNumberChoice, 3, 30);
+        ClientNumber.text = clientNumberChoice.ToString();
+    }
 
     public void OnClickedPlay()
     {
+        PlayerPrefs.SetInt("ClientNumber", clientNumberChoice);
         if (toggle_bool)
         {
             PlayerPrefs.SetString("position", "Sitting");
