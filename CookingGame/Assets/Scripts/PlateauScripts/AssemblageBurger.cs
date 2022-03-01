@@ -88,8 +88,8 @@ public class AssemblageBurger : MonoBehaviour
         {
             child.transform.localRotation = Quaternion.Euler(90f, 0, 0);
             child.transform.parent = parent.transform;
-            totalLocalHauteurY += 0.01f / 2f + ancienneHauteurY;
-            ancienneHauteurY = 0.01f;
+            totalLocalHauteurY += 0.05f / 2f + ancienneHauteurY;
+            ancienneHauteurY = 0.05f;
             child.GetComponent<Rigidbody>().isKinematic = true;
             child.transform.localPosition = new Vector3(0f, totalLocalHauteurY, 0f);
         }
