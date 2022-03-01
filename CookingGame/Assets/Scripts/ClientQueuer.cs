@@ -23,6 +23,9 @@ public class ClientQueuer : MonoBehaviour
     public bool isDone = false;
     float deathCounter = 0;
 
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -170,13 +173,14 @@ public class ClientQueuer : MonoBehaviour
         }
         else
         {
-            transform.Rotate(Vector3.up, 5, Space.World);
+            transform.Rotate(Vector3.up, 10, Space.World);
             transform.localScale *= 0.98f;
             deathCounter += Time.deltaTime;
 
             if (deathCounter >= 0.5f)
             {
                 Instantiate(ParticlesInventory.instance.starSuccess, transform.position, Quaternion.Euler(-90, 0, 0));
+                QueueManager.instance.servedClient++;
                 Destroy(this.gameObject);
             }
         }

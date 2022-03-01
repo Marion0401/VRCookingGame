@@ -15,6 +15,7 @@ public class QueueManager : MonoBehaviour
     public bool allClientsHaveBeenServed = false;
     public int TotalNumberofClients = 30;
     public int spawnedClient = 0;
+    public int servedClient = 0;
     [SerializeField] int QueueCapacity = 5;
     public List<ClientQueuer> queue = new List<ClientQueuer>();
 
@@ -39,7 +40,7 @@ public class QueueManager : MonoBehaviour
             Displays[rd.displayNumber] = rd;
         }
 
-        TotalNumberofClients = PlayerPrefs.GetInt("ClientNumber");
+        TotalNumberofClients = (PlayerPrefs.GetInt("ClientNumber")== 0)? 3 : PlayerPrefs.GetInt("ClientNumber");
     }
 
     public void ClientExit(int index)
@@ -49,7 +50,7 @@ public class QueueManager : MonoBehaviour
             ClientQueuer exiting = ClientAtSpot[index - 1].GetComponent<ClientQueuer>();
             if (exiting.atPlace)
             {
-                queue.RemoveAt(index - 1);
+                queue.RemoveAt(exiting.orderInQueue-1);
                 int j = 1;
                 foreach (ClientQueuer cq in queue) { cq.orderInQueue = j; j++; }
 
@@ -88,16 +89,7 @@ public class QueueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (startEndCheckDelay < 2 * spawnDelay && queue.Count > 0)
-        {
-            startEndCheckDelay += Time.deltaTime;
-        }
-        else if (!allClientsHaveBeenServed && queue.Count <= 0)
-        {
-            allClientsHaveBeenServed = true;
-        }
-
+        allClientsHaveBeenServed = (servedClient == TotalNumberofClients);
 
         if (autoSpawn)
         {
