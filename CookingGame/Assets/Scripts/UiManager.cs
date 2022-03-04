@@ -25,7 +25,7 @@ public class UiManager : MonoBehaviour
         BackButton.SetActive(false);
         Credits.SetActive(false);
         ClientNumber.text = clientNumberChoice.ToString();
-        
+
         toggle_bool = false;
         OnToggleClicked();
     }
@@ -42,12 +42,12 @@ public class UiManager : MonoBehaviour
         PlayerPrefs.SetInt("ClientNumber", clientNumberChoice);
         if (toggle_bool)
         {
-            PlayerPrefs.SetString("position", "Sitting");
 
+            PlayerPrefs.SetString("position", "Upright");
         }
         else
         {
-            PlayerPrefs.SetString("position", "Upright");
+            PlayerPrefs.SetString("position", "Sitting");
 
         }
         SceneManager.LoadScene("TeoScene", LoadSceneMode.Single);
@@ -82,11 +82,11 @@ public class UiManager : MonoBehaviour
         toggle_bool = !toggle_bool;
         if (toggle_bool)
         {
-            toggle.GetComponent<Text>().text = "Sitting";
+            toggle.GetComponent<Text>().text = "Upright";
         }
         else
         {
-            toggle.GetComponent<Text>().text = "Upright";
+            toggle.GetComponent<Text>().text = "Sitting";
         }
     }
 }
